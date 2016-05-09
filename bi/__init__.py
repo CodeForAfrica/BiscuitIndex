@@ -1,5 +1,6 @@
 from flask import (Flask, g, request, session, redirect,
         url_for, render_template, flash)
+from flask.ext.script import Manager
 import redis
 import os
 from biscuit_index.bi import config as config_file
@@ -31,3 +32,9 @@ def home():
 
 
 ### END OF VIEWS
+
+manager = Manager(app)
+
+if __name__ == "__main__":
+    manager.run()
+
