@@ -82,7 +82,7 @@
         <!-- Content Row -->
         <div class="row">
             <div class="col-md-8">
-                <h2>{{ county_data.get('name').capitalize() }}</h2>
+                <h2>{{ county_data.get('name', 'None').capitalize() }}</h2>
                 <hr>
                 {% for key, val in county_data.iteritems() %}
                 <p>
