@@ -1,9 +1,10 @@
 from flask import (Flask, g, request, session, redirect,
         url_for, render_template, flash)
-from flask.ext.script import Manager
+from flask_script import Manager
 import redis
 import os
 from biscuit_index.bi import config as config_file
+from normality import slugify
 
 app = Flask(__name__)
 app.config.from_object(config_file)
@@ -15,20 +16,32 @@ def get_db():
 
 ### VIEWS
 
+
 @app.route('/')
-def home():
+@app.route('/counties')
+def counties():
+    '''
+    counties.html
+    '''
     db = get_db()
     counties = app.config['COUNTIES']
-    county_details = {}
-    if request.args:
-        county = request.args['county']
-        county_details[county] = db.get(county)
-    else:
-        for county in counties:
-            values = db.get(county)
-            county_details[county] = values
+    all_counties = {}
+    for county in counties:
+        county_data = db.get(slugify(county))
+        if county_data:
+            all_counties[county] = eval(county_data)
+    return render_template('counties.html', counties=all_counties)
 
-    return render_template('layout.html', counties=county_details)
+
+
+@app.route('/counties/<county>')
+def county_page(county):
+    '''
+    county_page.html
+    '''
+    db = get_db()
+    county_data = db.get(slugify(county))
+    return render_template('county_page.html', county_data=eval(county_data))
 
 
 ### END OF VIEWS
