@@ -2202,3 +2202,325 @@ $367
 {'name': u'nairobi', 'travel': {'expenditure': '340.52', 'budget': '409.69'}, 'governance': {'party': 'ODM', 'deputy_governor': 'J. Mwangangi Mueke', 'governor': 'Evans Kidero'}, 'total_budget': '12.7 billion', 'geo': {'lat': '-1.296975', 'long': '36.844534'}, 'population': {'urban_pc': '100%', 'urban': '3138369', 'total': '3138369', 'rural': '', 'rural_pc': '0%'}}
 $2
 XX
+*3
+$3
+SET
+$5
+bomet
+$398
+{'name': u'bomet', 'travel': {'expenditure': '117.75', 'budget': '86.2'}, 'governance': {'party': 'URP', 'deputy_governor': 'Stephen Kipkoech Mutai', 'governor': 'Isaac Ruto'}, 'hospitality_budget': '', 'total_budget': '4.5 billion', 'geo': {'lat': '-0.690131', 'long': '35.278005'}, 'population': {'urban_pc': '14.8%', 'urban': '132255', 'total': '891835', 'rural_pc': '85.2%', 'rural': '759580'}}
+*3
+$3
+SET
+$7
+bungoma
+$418
+{'name': u'bungoma', 'travel': {'expenditure': '164.47', 'budget': '278.48'}, 'governance': {'party': 'NFK', 'deputy_governor': 'Hillary Moywo Chongwony', 'governor': 'Ken Lusaka'}, 'hospitality_budget': '332.7 million', 'total_budget': '10.3 billion', 'geo': {'lat': '0.737046', 'long': '34.672536'}, 'population': {'urban_pc': '21.7%', 'urban': '298696', 'total': '1375063', 'rural_pc': '78.3%', 'rural': '1076367'}}
+*3
+$3
+SET
+$5
+busia
+$417
+{'name': u'busia', 'travel': {'expenditure': '135.77', 'budget': '199.99'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Kizito Osore Wangalwa', 'governor': 'Sospeter Ojaamong'}, 'hospitality_budget': '22.4 million', 'total_budget': '6.3 billion', 'geo': {'lat': '0.428414', 'long': '34.210571'}, 'population': {'urban_pc': '16.4%', 'urban': '122190', 'total': '743946', 'rural_pc': '83.6%', 'rural': '621756'}}
+*3
+$3
+SET
+$15
+elgeyo-marakwet
+$416
+{'name': u'elgeyo-marakwet', 'travel': {'expenditure': '104.2', 'budget': '104.2'}, 'governance': {'party': 'URP', 'deputy_governor': 'Gabriel Lagat Kosgey', 'governor': 'Alex Tolgos'}, 'hospitality_budget': '11.5million', 'total_budget': '3.8 billion', 'geo': {'lat': '0.806011', 'long': '35.564093'}, 'population': {'urban_pc': '14.4%', 'urban': '53186', 'total': '369998', 'rural_pc': '85.6%', 'rural': '316812'}}
+*3
+$3
+SET
+$4
+embu
+$410
+{'name': u'embu', 'travel': {'expenditure': '144.92', 'budget': '115.24'}, 'governance': {'party': '', 'deputy_governor': 'Dorothy Nditi Muchungu[18]', 'governor': 'Martin Wambora'}, 'hospitality_budget': '47.6million', 'total_budget': '5 billion', 'geo': {'lat': '-0.5982', 'long': '37.653906'}, 'population': {'urban_pc': '16.1%', 'urban': '82921', 'total': '516212', 'rural_pc': '83.9%', 'rural': '433291'}}
+*3
+$3
+SET
+$7
+garissa
+$419
+{'name': u'garissa', 'travel': {'expenditure': '152.42', 'budget': '156.74'}, 'governance': {'party': 'WDM-K', 'deputy_governor': 'Abdullahi Hussein Ali', 'governor': 'Nathif Jama Adam'}, 'hospitality_budget': '108million', 'total_budget': '7.9 billion', 'geo': {'lat': '-0.564679', 'long': '40.408457'}, 'population': {'urban_pc': '23.5%', 'urban': '146668', 'total': '623060', 'rural_pc': '76.5%', 'rural': '476392'}}
+*3
+$3
+SET
+$8
+homa-bay
+$416
+{'name': u'homa-bay', 'travel': {'expenditure': '177.08', 'budget': '137.44'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Hamiliton Onyango Orata', 'governor': 'Cyprian Awiti'}, 'hospitality_budget': '19.8million', 'total_budget': '5 billion', 'geo': {'lat': '-0.640985', 'long': '34.411083'}, 'population': {'urban_pc': '14.3%', 'urban': '138051', 'total': '963794', 'rural_pc': '85.7%', 'rural': '825743'}}
+*3
+$3
+SET
+$6
+isiolo
+$409
+{'name': u'isiolo', 'travel': {'expenditure': '276.96', 'budget': '306.76'}, 'governance': {'party': 'URP', 'deputy_governor': 'Mohamed Gulleid Abdille', 'governor': 'Godana Doyo'}, 'hospitality_budget': '55million', 'total_budget': '3.3 billion', 'geo': {'lat': '0.949302', 'long': '38.614718'}, 'population': {'urban_pc': '43.5%', 'urban': '62374', 'total': '143294', 'rural_pc': '56.5%', 'rural': '80920'}}
+*3
+$3
+SET
+$7
+kajiado
+$230
+{'hospitality_budget': '60million', 'total_budget': '5.7 billion', 'travel': {'expenditure': '354.72', 'budget': '408.19'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Paul Mpute Ntiati', 'governor': 'David ole Nkedianye'}}
+*3
+$3
+SET
+$8
+kakamega
+$419
+{'name': u'kakamega', 'travel': {'expenditure': '250.72', 'budget': '331.31'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Philip Museve Kutima', 'governor': 'Wycliffe Oparanya'}, 'hospitality_budget': '71million', 'total_budget': '10.6 billion', 'geo': {'lat': '0.308499', 'long': '34.654844'}, 'population': {'urban_pc': '15.2%', 'urban': '252611', 'total': '1660651', 'rural_pc': '84.8%', 'rural': '1408040'}}
+*3
+$3
+SET
+$7
+kericho
+$413
+{'name': u'kericho', 'travel': {'expenditure': '163.37', 'budget': '148.09'}, 'governance': {'party': 'URP', 'deputy_governor': 'Susan Chepkoech Kikwai', 'governor': 'Paul Kiprono'}, 'hospitality_budget': '68million', 'total_budget': '4.8 billion', 'geo': {'lat': '-0.297842', 'long': '35.319833'}, 'population': {'urban_pc': '38.7%', 'urban': '228318', 'total': '590690', 'rural_pc': '61.3%', 'rural': '362372'}}
+*3
+$3
+SET
+$6
+kiambu
+$412
+{'name': u'kiambu', 'travel': {'expenditure': '370', 'budget': '400.61'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Gerald Gakuha Githinji', 'governor': 'William Gitau'}, 'hospitality_budget': '53million', 'total_budget': '10.4 billion', 'geo': {'lat': '-1.060698', 'long': '36.79929'}, 'population': {'urban_pc': '60.8%', 'urban': '1017476', 'total': '1673785', 'rural_pc': '39.2%', 'rural': '656309'}}
+*3
+$3
+SET
+$6
+kilifi
+$230
+{'hospitality_budget': '89.9million', 'total_budget': '9.9 billion', 'travel': {'expenditure': '265.01', 'budget': '336.74'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Kenneth Mwakombo Kamto', 'governor': 'Amason Kingi'}}
+*3
+$3
+SET
+$9
+kirinyaga
+$403
+{'name': u'kirinyaga', 'travel': {'expenditure': '95.14', 'budget': '123.66'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Julius Muthike Njiri', 'governor': 'Joseph Ndathi'}, 'hospitality_budget': '', 'total_budget': '4.1 billion', 'geo': {'lat': '-0.517766', 'long': '37.302006'}, 'population': {'urban_pc': '15.8%', 'urban': '83404', 'total': '528054', 'rural_pc': '84.2%', 'rural': '444650'}}
+*3
+$3
+SET
+$5
+kisii
+$413
+{'name': u'kisii', 'travel': {'expenditure': '257.95', 'budget': '225.5'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Arthur Maangi Gongera', 'governor': 'James Ongwae'}, 'hospitality_budget': '50.4 million', 'total_budget': '7.5 billion', 'geo': {'lat': '-0.782524', 'long': '34.766895'}, 'population': {'urban_pc': '21.5%', 'urban': '271719', 'total': '1263559', 'rural_pc': '78.5%', 'rural': '991840'}}
+*3
+$3
+SET
+$6
+kisumu
+$419
+{'name': u'kisumu', 'travel': {'expenditure': '133.46', 'budget': '204.57'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Ruth Adhiambo Odinga Busia', 'governor': 'Jack Ranguma'}, 'hospitality_budget': '46.5 million', 'total_budget': '7.9 billion', 'geo': {'lat': '-0.167225', 'long': '34.953647'}, 'population': {'urban_pc': '52.4%', 'urban': '507720', 'total': '968909', 'rural_pc': '47.6%', 'rural': '461189'}}
+*3
+$3
+SET
+$5
+kitui
+$412
+{'name': u'kitui', 'travel': {'expenditure': '211.42', 'budget': '252.21'}, 'governance': {'party': 'WDM-K', 'deputy_governor': 'Malonza Peninah', 'governor': 'Julius Malombe'}, 'hospitality_budget': '98.8 million', 'total_budget': '9.6 billion', 'geo': {'lat': '-1.519146', 'long': '38.376101'}, 'population': {'urban_pc': '13.8%', 'urban': '139909', 'total': '1012709', 'rural_pc': '86.2%', 'rural': '872800'}}
+*3
+$3
+SET
+$5
+kwale
+$230
+{'hospitality_budget': '82.1 million', 'total_budget': '6.5 billion', 'travel': {'expenditure': '225.02', 'budget': '284.86'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Fatuma Mohamed Achani', 'governor': 'Salim Mvurya'}}
+*3
+$3
+SET
+$8
+laikipia
+$416
+{'name': u'laikipia', 'travel': {'expenditure': '109.23', 'budget': '117.52'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Josphat Gitonga Kabugi', 'governor': 'Joshua Irungu'}, 'hospitality_budget': '59.4 million', 'total_budget': '4.3 billion', 'geo': {'lat': '0.311627', 'long': '36.814178'}, 'population': {'urban_pc': '24.8%', 'urban': '99117', 'total': '399227', 'rural_pc': '75.2%', 'rural': '300110'}}
+*3
+$3
+SET
+$4
+lamu
+$213
+{'hospitality_budget': '', 'total_budget': '2.5 billion', 'travel': {'expenditure': '107.55', 'budget': '108.41'}, 'governance': {'party': 'UDF', 'deputy_governor': 'Erick Kinyua Mugo', 'governor': 'Issa Timamy'}}
+*3
+$3
+SET
+$8
+machakos
+$414
+{'name': u'machakos', 'travel': {'expenditure': '191.2', 'budget': '186.22'}, 'governance': {'party': 'WDM-K', 'deputy_governor': 'Benard Muia Tom Kiala', 'governor': 'Alfred Mutua'}, 'hospitality_budget': '41.4 million', 'total_budget': '9.3 billion', 'geo': {'lat': '-1.327138', 'long': '37.352277'}, 'population': {'urban_pc': '52%', 'urban': '571355', 'total': '1098584', 'rural_pc': '48%', 'rural': '527229'}}
+*3
+$3
+SET
+$7
+makueni
+$229
+{'hospitality_budget': '64.4 million', 'total_budget': '7.0 billion', 'travel': {'expenditure': '239.11', 'budget': '241.36'}, 'governance': {'party': 'MP', 'deputy_governor': 'Adelina Ndeto Mwau', 'governor': 'Kivutha Kibwana'}}
+*3
+$3
+SET
+$7
+mandera
+$232
+{'hospitality_budget': '183 million', 'total_budget': '11.3 billion', 'travel': {'expenditure': '126.28', 'budget': '163.16'}, 'governance': {'party': 'URP', 'deputy_governor': 'Omar Mohamed Maalim', 'governor': 'Ibrahim Roba Ali'}}
+*3
+$3
+SET
+$8
+marsabit
+$401
+{'name': u'marsabit', 'travel': {'expenditure': '183.31', 'budget': '195.35'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Omar Abdi Ali', 'governor': 'Ukur Yattani'}, 'hospitality_budget': '51.8 million', 'total_budget': '5.8 billion', 'geo': {'lat': '2.772167', 'long': '37.76822'}, 'population': {'urban_pc': '22%', 'urban': '64009', 'total': '291166', 'rural_pc': '78%', 'rural': '227157'}}
+*3
+$3
+SET
+$4
+meru
+$403
+{'name': u'meru', 'travel': {'expenditure': '186.3', 'budget': '196.39'}, 'governance': {'party': 'APK', 'deputy_governor': 'Raphael Muriungi', 'governor': 'Peter Munya'}, 'hospitality_budget': '108.7 million', 'total_budget': '7.7 billion', 'geo': {'lat': '0.159398', 'long': '37.750761'}, 'population': {'urban_pc': '12%', 'urban': '190497', 'total': '1591533', 'rural_pc': '88%', 'rural': '1401036'}}
+*3
+$3
+SET
+$6
+migori
+$410
+{'name': u'migori', 'travel': {'expenditure': '255.25', 'budget': '427.84'}, 'governance': {'party': 'PDP', 'deputy_governor': 'Nelson Mahanga Mwita', 'governor': 'Zacharia Obado'}, 'hospitality_budget': '66.8 million', 'total_budget': '5.8 billion', 'geo': {'lat': '-1.008592', 'long': '34.42681'}, 'population': {'urban_pc': '34%', 'urban': '311512', 'total': '917170', 'rural_pc': '66%', 'rural': '605658'}}
+*3
+$3
+SET
+$7
+mombasa
+$232
+{'hospitality_budget': '55.1 million', 'total_budget': '9.9 billion', 'travel': {'expenditure': '22.6', 'budget': '174.8'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Hazel Ezabel Nyamoki Ogunde', 'governor': 'Hassan Joho'}}
+*3
+$3
+SET
+$8
+murang-a
+$420
+{'name': u'murang-a', 'travel': {'expenditure': '146.93', 'budget': '61.22'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Augustine J Gakure Monyo', 'governor': 'Mwangi wa Iria'}, 'hospitality_budget': '62.0 million', 'total_budget': '5.9 billion', 'geo': {'lat': '-0.804314', 'long': '37.035566'}, 'population': {'urban_pc': '16.3%', 'urban': '145202', 'total': '892078', 'rural_pc': '83.7%', 'rural': '746876'}}
+*3
+$3
+SET
+$7
+nairobi
+$403
+{'name': u'nairobi', 'travel': {'expenditure': '340.52', 'budget': '409.69'}, 'governance': {'party': 'ODM', 'deputy_governor': 'J. Mwangangi Mueke', 'governor': 'Evans Kidero'}, 'hospitality_budget': '98 million', 'total_budget': '25.6 billion', 'geo': {'lat': '-1.296975', 'long': '36.844534'}, 'population': {'urban_pc': '100%', 'urban': '3138369', 'total': '3138369', 'rural_pc': '0%', 'rural': ''}}
+*3
+$3
+SET
+$6
+nakuru
+$415
+{'name': u'nakuru', 'travel': {'expenditure': '268.89', 'budget': '168.53'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Joseph Kibore Rutto', 'governor': 'Kinuthia Mbugua'}, 'hospitality_budget': '31.5 million', 'total_budget': '11 billion', 'geo': {'lat': '-0.385212', 'long': '36.036261'}, 'population': {'urban_pc': '45.8%', 'urban': '735025', 'total': '1603325', 'rural_pc': '54.2%', 'rural': '868300'}}
+*3
+$3
+SET
+$5
+nandi
+$414
+{'name': u'nandi', 'travel': {'expenditure': '218.38', 'budget': '241.04'}, 'governance': {'party': 'URP', 'deputy_governor': 'Dominic Kimutai Biwott', 'governor': 'Lagat Cleophas'}, 'hospitality_budget': '7.3 million', 'total_budget': '5.2 billion', 'geo': {'lat': '0.143371', 'long': '35.156125'}, 'population': {'urban_pc': '13.6%', 'urban': '102281', 'total': '752965', 'rural_pc': '86.4%', 'rural': '650684'}}
+*3
+$3
+SET
+$5
+narok
+$415
+{'name': u'narok', 'travel': {'expenditure': '141.98', 'budget': '183.18'}, 'governance': {'party': 'URP', 'deputy_governor': 'Aruasa Evalyn Chepkirui', 'governor': 'Samuel ole Tunai'}, 'hospitality_budget': '90.3 million', 'total_budget': '8 billion', 'geo': {'lat': '-1.227452', 'long': '35.686784'}, 'population': {'urban_pc': '6.9%', 'urban': '58494', 'total': '850920', 'rural_pc': '93.1%', 'rural': '792426'}}
+*3
+$3
+SET
+$7
+nyamira
+$405
+{'name': u'nyamira', 'travel': {'expenditure': '210.2', 'budget': '290.27'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Amos Kimwomi Nyaribo', 'governor': 'John Obiero'}, 'hospitality_budget': '12 million', 'total_budget': '4.7 billion', 'geo': {'lat': '-0.644917', 'long': '34.955612'}, 'population': {'urban_pc': '14%', 'urban': '68303', 'total': '486975', 'rural_pc': '86%', 'rural': '418672'}}
+*3
+$3
+SET
+$9
+nyandarua
+$421
+{'name': u'nyandarua', 'travel': {'expenditure': '162.19', 'budget': '131.16'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Waithaka Mwangi Kirika', 'governor': 'Daniel Waithaka'}, 'hospitality_budget': '78.3 million', 'total_budget': '4.5 billion', 'geo': {'lat': '-0.374727', 'long': '36.494076'}, 'population': {'urban_pc': '18.5%', 'urban': '110518', 'total': '596268', 'rural_pc': '81.5%', 'rural': '485750'}}
+*3
+$3
+SET
+$5
+nyeri
+$420
+{'name': u'nyeri', 'travel': {'expenditure': '203.87', 'budget': '223.12'}, 'governance': {'party': 'GNU', 'deputy_governor': 'Wamathai Samwel Githaiga', 'governor': 'Nderitu Gachagua'}, 'hospitality_budget': '77.8 million', 'total_budget': '5.4 billion', 'geo': {'lat': '-0.407168', 'long': '36.965186'}, 'population': {'urban_pc': '24.5%', 'urban': '169617', 'total': '693558', 'rural_pc': '75.5%', 'rural': '523941'}}
+*3
+$3
+SET
+$7
+samburu
+$408
+{'name': u'samburu', 'travel': {'expenditure': '156.95', 'budget': '224.96'}, 'governance': {'party': 'URP', 'deputy_governor': 'Joseph Lemarkat', 'governor': 'Moses Kasaine'}, 'hospitality_budget': '16.1 million', 'total_budget': '4.1 billion', 'geo': {'lat': '1.183862', 'long': '37.184377'}, 'population': {'urban_pc': '17.3%', 'urban': '38664', 'total': '223947', 'rural_pc': '82.7%', 'rural': '185283'}}
+*3
+$3
+SET
+$5
+siaya
+$410
+{'name': u'siaya', 'travel': {'expenditure': '219.58', 'budget': '205.7'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Wilson Ouma Onyango', 'governor': 'Cornel Rasanga'}, 'hospitality_budget': '32.1 million', 'total_budget': '5.9 billion', 'geo': {'lat': '0.070277', 'long': '34.293463'}, 'population': {'urban_pc': '10.8%', 'urban': '90627', 'total': '842304', 'rural_pc': '89.2%', 'rural': '751677'}}
+*3
+$3
+SET
+$12
+taita-taveta
+$225
+{'hospitality_budget': '25.1 million', 'total_budget': '4.2 billion', 'travel': {'expenditure': '271.25', 'budget': '311.75'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Mary Ndiga Kibuka', 'governor': 'John Mruttu'}}
+*3
+$3
+SET
+$10
+tana-river
+$411
+{'name': u'tana-river', 'travel': {'expenditure': '277.82', 'budget': '358.94'}, 'governance': {'party': 'WDM-K', 'deputy_governor': 'Jire Siyat Mohamed', 'governor': 'Tuneya Dado'}, 'hospitality_budget': '17.9 million', 'total_budget': '4.6 billion', 'geo': {'lat': '-1.584971', 'long': '39.536272'}, 'population': {'urban_pc': '15%', 'urban': '36065', 'total': '240075', 'rural_pc': '85%', 'rural': '204010'}}
+*3
+$3
+SET
+$13
+tharaka-nithi
+$414
+{'name': u'tharaka-nithi', 'travel': {'expenditure': '115.41', 'budget': '125.82'}, 'governance': {'party': 'TNA', 'deputy_governor': 'Eliud Mate Muriithi', 'governor': 'Samuel Ragwa'}, 'hospitality_budget': '37.9 million', 'total_budget': '4 billion', 'geo': {'lat': '-0.227324', 'long': '37.882411'}, 'population': {'urban_pc': '6.6%', 'urban': '8535', 'total': '130098', 'rural_pc': '93.4%', 'rural': '121563'}}
+*3
+$3
+SET
+$11
+trans-nzoia
+$434
+{'name': u'trans-nzoia', 'travel': {'expenditure': '229.17', 'budget': '182.91'}, 'governance': {'party': 'FORD-KENYA', 'deputy_governor': 'Stanley Kiptoo Kenei Tarus', 'governor': 'Patrick Khaemba'}, 'hospitality_budget': '103.7 million', 'total_budget': '5.3 billion', 'geo': {'lat': '1.030597', 'long': '34.949297'}, 'population': {'urban_pc': '20.4%', 'urban': '167420', 'total': '818757', 'rural_pc': '79.6%', 'rural': '651337'}}
+*3
+$3
+SET
+$7
+turkana
+$228
+{'hospitality_budget': '24.5 million', 'total_budget': '13.1 billion', 'travel': {'expenditure': '294.55', 'budget': '263.66'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Peter Ekai Lokoel', 'governor': 'Josphat Nanok'}}
+*3
+$3
+SET
+$11
+uasin-gishu
+$412
+{'name': u'uasin-gishu', 'travel': {'expenditure': '164.6', 'budget': '168.02'}, 'governance': {'party': 'URP', 'deputy_governor': 'Daniel Kiplagat Kiprotich', 'governor': 'Jackson Mandago'}, 'hospitality_budget': '', 'total_budget': '6.9 billion', 'geo': {'lat': '0.555288', 'long': '35.306307'}, 'population': {'urban_pc': '38.6%', 'urban': '345559', 'total': '894179', 'rural_pc': '61.4%', 'rural': '548620'}}
+*3
+$3
+SET
+$6
+vihiga
+$410
+{'name': u'vihiga', 'travel': {'expenditure': '84.53', 'budget': '28'}, 'governance': {'party': 'PPK', 'deputy_governor': 'Caleb Temba Amaswache', 'governor': 'Moses Akaranga'}, 'hospitality_budget': '24.8 million', 'total_budget': '4.8 billion', 'geo': {'lat': '0.304142', 'long': '34.943582'}, 'population': {'urban_pc': '31.4%', 'urban': '174105', 'total': '554622', 'rural_pc': '68.6%', 'rural': '380517'}}
+*3
+$3
+SET
+$5
+wajir
+$424
+{'name': u'wajir', 'travel': {'expenditure': '192.46', 'budget': '182.02'}, 'governance': {'party': 'ODM', 'deputy_governor': 'Abdulhafid Abdullahi Yarow', 'governor': 'Ahmed Abdullahi Mohamad'}, 'hospitality_budget': '40 million', 'total_budget': '7.3 billion', 'geo': {'lat': '1.895541', 'long': '40.07933'}, 'population': {'urban_pc': '14.6%', 'urban': '96855', 'total': '661941', 'rural_pc': '85.4%', 'rural': '565086'}}
+*3
+$3
+SET
+$10
+west-pokot
+$404
+{'name': u'west-pokot', 'travel': {'expenditure': '241.9', 'budget': '210.82'}, 'governance': {'party': 'KANU', 'deputy_governor': 'Titus Lotee', 'governor': 'Simon Kitalei'}, 'hospitality_budget': '66 million', 'total_budget': '4.3 billion', 'geo': {'lat': '1.575837', 'long': '35.316901'}, 'population': {'urban_pc': '8.3%', 'urban': '42696', 'total': '512690', 'rural_pc': '91.7%', 'rural': '469994'}}
