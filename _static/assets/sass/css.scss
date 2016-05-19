@@ -24,6 +24,7 @@ body {
 	text-align: center;
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 20px;
+	line-height: 1.35;
 }
 
  .wrap {
@@ -48,6 +49,62 @@ body {
 	}
 
 
+// Footer
+
+.bottom {
+	background: $purple-secondary;
+	color: rgba(#fff,0.9);
+	font-size: 15px;
+
+	.wrap {
+		padding: 52px 0 62px;
+	}
+
+	.inner {
+		padding-right: 10%;
+	}
+
+	h3 {
+		color: #fff;
+		font-size: 20px;
+		font-weight: 600;
+		margin-bottom: 25px;
+	}
+}
+
+	.social {
+		li {
+			display: inline;
+
+			a {
+				display: inline-block;
+				width: 34px;
+				height: 34px;
+				background: red;
+				margin-right: 4px;
+
+				&.fb { background: image-url('icon-fb.png'); }
+				&.tw { background: image-url('icon-tw.png'); }
+				&.gp { background: image-url('icon-gp.png'); }
+			}
+		}
+	}
+
+	.credits {
+		margin-top: 40px;
+		border-top: 1px solid rgba(#fff,0.1);
+		padding-top: 20px;
+	}
+
+	.martianskills {
+		display: inline-block;
+		color: rgba(#fff,0.5);
+		border-bottom: 1px dotted transparent;
+
+		&:hover {
+			border-bottom: 1px dotted;
+		}
+	}
 
 /* ------------------------------------------------
 02 Media Queries
