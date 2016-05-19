@@ -58,10 +58,10 @@ docs/_build/
 # PyBuilder
 target/
 
-#Ipython Notebook
+# Ipython Notebook
 .ipynb_checkpoints
 
-#Mac stuff
+# Mac stuff
 */.DS_Store
 .DS_Store
 .DS_Store?
@@ -71,3 +71,6 @@ target/
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Sass
+.sass-cache/
