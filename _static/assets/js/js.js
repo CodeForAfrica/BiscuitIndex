@@ -10,6 +10,8 @@ jQuery(function($) {
 
 		function baseFx() {
 
+			$('#expenditure').focus();
+
 			$(window).load(function() {
 
 				// remove preload class
