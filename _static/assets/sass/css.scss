@@ -34,12 +34,26 @@ body {
 }
 
 
+// Masthead
+
+.top {
+	height: 88px;
+}
+
+	.logo {
+		display: inline-block;
+		width: 170px;
+		height: 88px;
+		background: image-url('logo.png');
+	}
+
+
 
 /* ------------------------------------------------
 02 Media Queries
 --------------------------------------------------- */
 
-@media (max-width: 980px) {
+@media (max-width: 1240px) {
 
 	.wrap { width: 94%; }
 
