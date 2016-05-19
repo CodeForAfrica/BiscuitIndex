@@ -74,3 +74,6 @@ Thumbs.db
 
 # Sass
 .sass-cache/
+
+# Sublime
+_static/assets/sublime
