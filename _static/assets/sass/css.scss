@@ -334,6 +334,29 @@ body {
 
 }
 
+@media (max-width: 600px) {
+
+	.wrap { width: 90%; }
+
+	.wrap.flex {
+		display: block;
+	}
+
+	.side-col { width: 100%; border: none; text-align: center; }
+	.static .side-col .inner { text-align: center; }
+	.controls i { display: block; width: auto; margin: 0; float: none; }
+	.controls i:after { display: none; }
+	.controls input { width: 70%; margin-top: 10px; }
+
+	.bottom .two-thirds { margin-bottom: 20px; }
+	.bottom .two-thirds,
+	.bottom .third { float: none; width: 100%; }
+
+	.icon-container,
+	.icon-legend { padding-left: 0; padding-right: 0; }
+
+}
+
 
 
 /* ------------------------------------------------
