@@ -54,6 +54,7 @@ sub {
 .boxfix		{ @include box-sizing(border-box); }
 .block		{ display: block; }
 .iblock		{ display: inline-block; }
+.flex		{ @include display-flex; }
 
 
 /* Visibility + State */
