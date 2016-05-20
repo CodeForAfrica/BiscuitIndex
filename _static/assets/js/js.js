@@ -10,7 +10,47 @@ jQuery(function($) {
 
 		function baseFx() {
 
+			// automatically go to input
 			$('#expenditure').focus();
+
+			// simulate infographics
+			
+			var units = 80,
+				houseString = '',
+				sodaString = '',
+				coffeeString = '',
+				cupcakeString = '',
+				delay = 0.03;
+
+			// house loop
+			for (var i = units - 1; i >= 0; i--) {
+				houseString += '<i class="house" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+				delay += 0.03;
+			}
+
+			// soda loop
+			for (var i = units - 1; i >= 0; i--) {
+				sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+				delay += 0.03;
+			}
+
+			// coffee loop
+			for (var i = units - 1; i >= 0; i--) {
+				coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+				delay += 0.03;
+			}
+
+			// cupcake loop
+			for (var i = units - 1; i >= 0; i--) {
+				cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+				delay += 0.03;
+			}
+
+			// insert into DOM
+			$('.house-icons').html(houseString);
+			$('.soda-icons').html(sodaString);
+			$('.coffee-icons').html(coffeeString);
+			$('.cupcake-icons').html(cupcakeString);
 
 			$(window).load(function() {
 
