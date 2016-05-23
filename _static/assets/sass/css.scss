@@ -72,7 +72,7 @@ body {
 		border-bottom: 2px solid rgba(#fff,0.5);
 		@include border-radius(0);
 		@include appearance(none);
-		color: #fdff8a;;
+		color: $input-yellow;
 		font-size: 18px;
 		font-family: "Source Sans Pro", sans-serif;
 		padding: 0 30px 4px 3px;
@@ -86,13 +86,18 @@ body {
 		border-bottom: 2px solid rgba(#fff,0.5);
 		@include border-radius(0);
 		@include appearance(none);
-		color: #fdff8a;
+		color: $input-yellow;
 		font-size: 18px;
 		font-family: "Source Sans Pro", sans-serif;
 		padding: 0 4px 4px;
-	}
 
-	input[type="number"]:focus { border-color: rgba(#fff,0.85); }
+		&:focus { border-color: rgba(#fff,0.85); }
+		
+		&.highlight,
+		&.highlight:focus {
+			border-color: $input-yellow;
+		}
+	}
 
 	p {
 		margin-bottom: 40px;
@@ -128,6 +133,7 @@ body {
 
 .output {
 	overflow: hidden;
+	display: none;
 }
 
 .static {
@@ -150,6 +156,10 @@ body {
 		}
 	}
 }
+
+	#output-county {
+		text-transform: uppercase;
+	}
 
 	#output-budget{
 		display: inline-block;
@@ -224,6 +234,35 @@ body {
 		}
 	}
 
+	.batch-count {
+		padding: 40px 10%;
+		font-size: 40px;
+		border-left: 1px solid $rose-gold-secondary;
+		text-align: center;
+		color: $purple-primary;
+		font-weight: 700;
+		line-height: 1;
+
+		div { position: relative; }
+
+		em {
+			font-weight: 100;
+			font-size: 70%;
+			opacity: 0.5;
+			padding-right: 2px;
+			position: absolute;
+			right: 100%;
+			top: 10px;
+		}
+	}
+
+		.batch-count-name {
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 400;
+			padding-top: 10px;
+		}
+
 	.icon-container {
 		padding: 22px 45px;
 	}
@@ -265,6 +304,14 @@ body {
 		&.soda 		{ background-image: image-url('icon-soda.png'); }
 		&.coffee 	{ background-image: image-url('icon-coffee.png'); }
 		&.cupcake 	{ background-image: image-url('icon-cupcake.png'); }
+		&.fee 	{ background-image: image-url('icon-fee.png'); }
+		&.commute 	{ background-image: image-url('icon-commute.png'); }
+	}
+
+	#output-soda-ratio,
+	#output-coffee-ratio,
+	#output-cupcake-ratio {
+		font-weight: 700;
 	}
 
 .side-col { @include flex(0 0 250px); }
@@ -331,6 +378,13 @@ body {
 @media (max-width: 1240px) {
 
 	.wrap { width: 94%; }
+
+}
+
+@media (max-width: 1140px) {
+
+	.flex .batch-count { text-align: left; padding-left: 50px; }
+	.icon-row .flex { display: block; }
 
 }
 

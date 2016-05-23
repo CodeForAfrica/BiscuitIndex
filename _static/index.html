@@ -25,17 +25,17 @@
 	<section class="prompt cover">
 		<div class="wrap">
 			<p>How much do you spend on <select name="category" id="category">
-					<option value="">Monthly Rent</option>
-					<option value="">School Fees per Term</option>
-					<option value="">Daily Commutes</option>
+					<option value="rent">Monthly Rent</option>
+					<option value="fees">School Fees per Term</option>
+					<option value="commute">Daily Commutes</option>
 				</select>? <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast"><span class="currency">KES</span>
 			</p>
 			<p>Compare this to <select name="county" id="county">
-					<option value="">Nairobi</option>
-					<option value="">Nyeri</option>
-					<option value="">Murang'a</option>
+					<option value="nairobi">Nairobi</option>
+					<option value="nyeri">Nyeri</option>
+					<option value="muranga">Murang'a</option>
 				</select> County’s expenditure on <em>&ldquo;tea and biscuits&rdquo;.</em></p>
-				<p><a href="" class="compare fx">Compare</a></p>
+				<p><a href="" id="compare" class="compare fx">Compare</a></p>
 		</div>
 	</section><!--/ prompt -->
 
@@ -45,16 +45,16 @@
 			<div class="wrap flex">
 				<div class="side-col">
 					<div class="inner">
-						<span id="output-county">Nairobi</span> County's budget of <br><span id="output-budget">2,000,000</span><br>
-						equals your <span id="output-category">Monthly Rent</span> for approximately<br><span id="output-comparison">200</span> <span id="output-comparison-units">people</span>
+						<span id="output-county">Nairobi</span> County's budget of <br><span id="output-budget">0</span><br>
+						equals your <span id="output-category">Monthly Rent</span> for approximately<br><span id="output-comparison">0</span> <span id="output-comparison-units">people</span>
 					</div>
 				</div>
 				<div class="main-col">
-					<div class="icon-container house-icons">
+					<div class="icon-container output-icons">
 						<i class="house"></i>
 					</div>
 					<div class="icon-legend">
-						<i class="house"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units"> homes</span>											
+						<i class="house"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units">homes</span>											
 					</div>
 				</div>
 			</div>
@@ -65,9 +65,9 @@
 				<div class="side-col">
 					<div class="inner">
 						<nav class="controls">
-							<div class="control"><i class="soda"></i><input type="range"></div>
-							<div class="control"><i class="coffee"></i><input type="range"></div>
-							<div class="control"><i class="cupcake"></i><input type="range"></div>
+							<div class="control"><i class="soda"></i><input type="range" id="range-soda" min="0" value="100" max="100" step="1"></div>
+							<div class="control"><i class="coffee"></i><input type="range" id="range-coffee" min="0" value="100" max="100" step="1"></div>
+							<div class="control"><i class="cupcake"></i><input type="range" id="range-cupcake" min="0" value="100" max="100" step="1"></div>
 						</nav>
 					</div>
 				</div>
@@ -75,28 +75,37 @@
 					<div class="icon-row">
 						<div class="flex">
 							<div class="icon-container soda-icons"></div>
-							<div class="batch-count"></div>
+							<div class="batch-count">
+								<div id="batch-count--soda"></div>
+								<div class="batch-count-name">Crates</div>
+							</div>
 						</div>
 						<div class="icon-legend">
-							<i class="soda"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units"> bottles</span>
+							<i class="soda"></i> = <span id="output-soda-ratio">100</span> <span class="output-ratio-units"> 300ml <strong>bottles</strong> <em>@</em> KES 30</span>
 						</div>
 					</div>
 					<div class="icon-row">
 						<div class="flex">
 							<div class="icon-container coffee-icons"></div>
-							<div class="batch-count"></div>
+							<div class="batch-count">
+								<div id="batch-count--coffee"></div>
+								<div class="batch-count-name">Litres</div>
+							</div>
 						</div>
 						<div class="icon-legend">
-							<i class="coffee"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units"> cups of Java coffee</span>
+							<i class="coffee"></i> = <span id="output-coffee-ratio">100</span> <span class="output-ratio-units"> <strong>cups</strong> of Java coffee <em>@</em> KES 220</span>
 						</div>
 					</div>
 					<div class="icon-row">
 						<div class="flex">
 							<div class="icon-container cupcake-icons"></div>
-							<div class="batch-count"></div>
+							<div class="batch-count">
+								<div id="batch-count--cupcake"></div>
+								<div class="batch-count-name">Packets</div>
+							</div>
 						</div>
 						<div class="icon-legend">
-							<i class="cupcake"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units"> cupcakes</span>
+							<i class="cupcake"></i> = <span id="output-cupcake-ratio">100</span> <span class="output-ratio-units"> <strong>cupcakes</strong> <em>@</em> KES 15</span>
 						</div>
 					</div>
 				</div>
@@ -132,5 +141,11 @@
 	<script src="assets/js/jquery-1.8.1.min.js"></script>
 	<script src="assets/js/libs.js"></script>
 	<script src="assets/js/js.js"></script>
+
+	<script type="text/javascript">
+		// extract county hospitality budget from JSON 
+		// and assign it here. The rest is magic.
+		var countyBudget = 96000000;
+	</script>
 </body>
 </html>
