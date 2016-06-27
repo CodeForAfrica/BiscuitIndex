@@ -1,5 +1,5 @@
 from flask import (Flask, g, request, session, redirect,
-        url_for, render_template, flash)
+        url_for, render_template, jsonify)
 from flask_script import Manager
 import redis
 import os
@@ -40,6 +40,18 @@ def counties():
         for x in biscuit_budget.replace('million', '').split():
             biscuit = "%s000000" % int(float(x))
     return render_template('index.html', biscuit_budget=int(biscuit))
+
+
+@app.route('/data.json')
+def data():
+    '''
+    '''
+    db = get_db()
+    resp = dict()
+    for county in app.config['COUNTIES']:
+        county_details = db.get(county)
+        resp[county] = county_details
+    return jsonify(resp)
 
 
 ### END OF VIEWS
