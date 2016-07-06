@@ -295,7 +295,8 @@ jQuery(function($) {
 
 				if ((diff > 0) && (wWidth > 800) && (diff < bHeight + 370)) {
 					$sideBar.css({'margin-top':diff});
-				} else {
+				} else if (diff < 0) {
+					$sideBar.removeAttr('style');
 				}
 
 				console.log(diff);
