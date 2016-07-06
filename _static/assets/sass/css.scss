@@ -150,6 +150,11 @@ body {
 
 	.inner {
 		padding-right: 30px;
+		padding-bottom: 20px;
+
+		&:first-child {
+			border-bottom: 1px solid $rose-gold-secondary;
+		}
 
 		.static & {
 			text-align: right;
@@ -182,6 +187,7 @@ body {
 	}
 
 	.controls {
+		padding-top: 20px;
 
 		.control {
 			overflow: hidden;
@@ -202,8 +208,8 @@ body {
 			}
 
 			&.soda:after 	{ content: "SODA"; }
-			&.coffee:after 	{ content: "COFFEE"; }
-			&.cupcake:after { content: "CUPCAKES"; }
+			&.coffee:after 	{ content: "TEA"; }
+			&.cupcake:after { content: "LOAVES"; }
 
 			&.soda 		{ background-image: image-url('icon-soda-purple.png'); }
 			&.coffee 	{ background-image: image-url('icon-coffee-purple.png'); }
@@ -211,7 +217,7 @@ body {
 		}
 
 		input {
-			width: 70%;
+			width: 77%;
 			margin-top: 25px;
 		}
 	}

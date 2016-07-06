@@ -13,6 +13,7 @@ jQuery(function($) {
 
 		var html			= $('html'),
 			$body			= $('body'),
+			bHeight 		= $body.innerHeight(),
 			wWidth 			= $(window).innerWidth(),
 			wHeight 		= $(window).innerHeight(),
 			urlCat 			= '' + getUrlParameter('cat'),
@@ -280,6 +281,26 @@ jQuery(function($) {
 				$body.removeClass('preload');
 
 			}); // load
+
+			// sticky sidebar
+			var $sideBar = $body.find('.side-col'),
+				sideBarPos = $sideBar.offset().top,
+				scrollPos, diff;
+
+
+			$(window).scroll(function() {
+				scrollPos = $body.scrollTop();
+
+				diff = (scrollPos - (sideBarPos - 88))
+
+				if ((diff > 0) && (wWidth > 800) && (diff < bHeight + 370)) {
+					$sideBar.css({'margin-top':diff});
+				} else {
+				}
+
+				console.log(diff);
+			});
+
 		}
 
 

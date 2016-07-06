@@ -44,9 +44,18 @@
 		<section class="static">
 			<div class="wrap flex">
 				<div class="side-col">
-					<div class="inner">
-						<span id="output-county">Nairobi</span> County's budget of <br><span id="output-budget">0</span><br>
-						equals your <span id="output-category">Monthly Rent</span> for approximately<br><span id="output-comparison">0</span> <span id="output-comparison-units">people</span>
+					<div class="static-nav">
+						<div class="inner">
+							<span id="output-county">Nairobi</span> County's budget of <br><span id="output-budget">0</span><br>
+							equals your <span id="output-category">Monthly Rent</span> for approximately<br><span id="output-comparison">0</span> <span id="output-comparison-units">people</span>
+						</div>
+						<div class="inner">
+							<nav class="controls">
+								<div class="control"><i class="soda"></i><input type="range" id="range-soda" min="0" value="100" max="100" step="1"></div>
+								<div class="control"><i class="coffee"></i><input type="range" id="range-coffee" min="0" value="100" max="100" step="1"></div>
+								<div class="control"><i class="cupcake"></i><input type="range" id="range-cupcake" min="0" value="100" max="100" step="1"></div>
+							</nav>
+						</div>
 					</div>
 				</div>
 				<div class="main-col">
@@ -56,22 +65,7 @@
 					<div class="icon-legend">
 						<i class="house"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units">homes</span>											
 					</div>
-				</div>
-			</div>
-		</section><!--/ static -->
 
-		<section class="dynamic">
-			<div class="wrap flex">
-				<div class="side-col">
-					<div class="inner">
-						<nav class="controls">
-							<div class="control"><i class="soda"></i><input type="range" id="range-soda" min="0" value="100" max="100" step="1"></div>
-							<div class="control"><i class="coffee"></i><input type="range" id="range-coffee" min="0" value="100" max="100" step="1"></div>
-							<div class="control"><i class="cupcake"></i><input type="range" id="range-cupcake" min="0" value="100" max="100" step="1"></div>
-						</nav>
-					</div>
-				</div>
-				<div class="main-col">
 					<div class="icon-row">
 						<div class="flex">
 							<div class="icon-container soda-icons"></div>
