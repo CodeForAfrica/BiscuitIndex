@@ -100,7 +100,7 @@ jQuery(function($) {
 				iconSodaMax = 90, // specific to soda
 				iconCoffeeMax = 75, // specific to coffee
 				iconCupcakeMax = 150, // specific to cupcakes
-				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 10 ) * 10,
+				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
 				outputIconsNumber = Math.round(comparison / outputRatio),
 				outputRatioUnits = '';
 			
@@ -152,13 +152,13 @@ jQuery(function($) {
 				coffeeCount = Math.round(thirdCountyBudgetInteger / coffeePrice),
 				cupcakeCount = Math.round(thirdCountyBudgetInteger / cupcakePrice),
 
-				sodaRatio = Math.ceil( (parseInt(sodaCount) / iconSodaMax) / 10 ) * 10,
+				sodaRatio = Math.ceil( (parseInt(sodaCount) / iconSodaMax) / 1000 ) * 1000,
 				sodaIconsNumber = Math.round(sodaCount / sodaRatio),
 
-				coffeeRatio = Math.ceil( (parseInt(coffeeCount) / iconCoffeeMax) / 10 ) * 10,
+				coffeeRatio = Math.ceil( (parseInt(coffeeCount) / iconCoffeeMax) / 1000 ) * 1000,
 				coffeeIconsNumber = Math.round(coffeeCount / coffeeRatio),
 
-				cupcakeRatio = Math.ceil( (parseInt(cupcakeCount) / iconCupcakeMax) / 10 ) * 10,
+				cupcakeRatio = Math.ceil( (parseInt(cupcakeCount) / iconCupcakeMax) / 1000 ) * 1000,
 				cupcakeIconsNumber = Math.round(cupcakeCount / cupcakeRatio);
 
 				$('#output-soda-ratio').html(sodaRatio.toLocaleString());
