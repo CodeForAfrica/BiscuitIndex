@@ -63,7 +63,7 @@ jQuery(function($) {
 
 			// write base data
 
-			$('#output-budget').html(countyBudget.toLocaleString());
+			$('#output-budget').html(countyBudgetString);
 
 			var countyName,
 				categoryName,
@@ -86,7 +86,7 @@ jQuery(function($) {
 
 			// calculate comparison value
 
-			comparison = countyBudget / urlExp;
+			comparison = countyBudgetInteger / urlExp;
 			comparison = Math.round(comparison);
 			comparisonString = comparison.toLocaleString();
 			
@@ -143,14 +143,14 @@ jQuery(function($) {
 
 			// secondary outputs
 
-			var thirdCountyBudget = Math.round(countyBudget / 3),
+			var thirdCountyBudgetInteger = Math.round(countyBudgetInteger / 3),
 				sodaPrice = 30,
 				coffeePrice = 200,
 				cupcakePrice = 15,
 
-				sodaCount = Math.round(thirdCountyBudget / sodaPrice),
-				coffeeCount = Math.round(thirdCountyBudget / coffeePrice),
-				cupcakeCount = Math.round(thirdCountyBudget / cupcakePrice),
+				sodaCount = Math.round(thirdCountyBudgetInteger / sodaPrice),
+				coffeeCount = Math.round(thirdCountyBudgetInteger / coffeePrice),
+				cupcakeCount = Math.round(thirdCountyBudgetInteger / cupcakePrice),
 
 				sodaRatio = Math.ceil( (parseInt(sodaCount) / iconSodaMax) / 10 ) * 10,
 				sodaIconsNumber = Math.round(sodaCount / sodaRatio),
@@ -211,12 +211,12 @@ jQuery(function($) {
 
 				var total = soda + coffee + cupcake;
 
-				// number of items equals -> countyBudget multiplied by the ratio of item to the rest,
+				// number of items equals -> countyBudgetInteger multiplied by the ratio of item to the rest,
 				// (according to current set state of sliders), then divided by the cost of a single item
 				
-				sodaCount = Math.round((countyBudget * ( soda / total)) / sodaPrice);
-				coffeeCount = Math.round((countyBudget * ( coffee / total)) / coffeePrice);
-				cupcakeCount = Math.round((countyBudget * ( cupcake / total)) / cupcakePrice);
+				sodaCount = Math.round((countyBudgetInteger * ( soda / total)) / sodaPrice);
+				coffeeCount = Math.round((countyBudgetInteger * ( coffee / total)) / coffeePrice);
+				cupcakeCount = Math.round((countyBudgetInteger * ( cupcake / total)) / cupcakePrice);
 
 				// get number of icons to display according to initially computed ratios
 				sodaIconsNumber = Math.round(sodaCount / sodaRatio);
