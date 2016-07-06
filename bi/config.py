@@ -1,6 +1,7 @@
 import os
 
 redis_host = os.getenv('REDIS_HOST', 'localhost:6379')
+db_host = os.getenv('MYSQL_HOST')
 
 REDIS = dict(
         host=redis_host.split(':')[0],
@@ -24,3 +25,10 @@ COUNTIES = ['baringo', 'bomet', 'bungoma', 'busia',
             'tharaka - nithi', 'trans nzoia', 'turkana',
             'uasin gishu', 'vihiga', 'wajir', 'west pokot'
             ]
+
+DATABASE = dict(
+        username=db_host.split(',')[0],
+        password=db_host.split(',')[1],
+        host=db_host.split(',')[2],
+        table='BISCUIT_INDEX'
+        )
