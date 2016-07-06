@@ -66,6 +66,21 @@ body {
 
 	.wrap { padding: 120px 0 114px; }
 
+	.intro-text {
+		width: 30%;
+		font-size: 18px;
+	}
+
+	.action-box {
+		width: 70%;
+
+		.inner {
+			margin-left: 5%;
+			padding-left: 5%;
+			border-left: 1px dotted rgba(#fff,0.2);
+		}
+	}
+
 	select {
 		background: transparent image-url('arrow-down.png') right center no-repeat;
 		border: none;
@@ -110,6 +125,7 @@ body {
 		opacity: 0.5;
 		margin-left: -50px;
 	}
+
 }
 
 	.compare {
