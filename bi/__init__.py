@@ -47,12 +47,36 @@ def counties():
 def data():
     '''
     '''
+    args = request.args.copy()
     db = get_db()
     resp = dict()
+    lst = []
     for county in app.config['COUNTIES']:
-        county_details = db.get(county)
+        county_details = eval(db.get(county))
         resp[county] = county_details
-    return jsonify(resp)
+        try:
+            biscuit_budget = county_details.get('hospitality_budget', '0')
+            if not str(biscuit_budget).isdigit() and str(biscuit_budget):
+                for x in biscuit_budget.replace('million', '').split():
+                    biscuit_budget_int = "%s000000" % int(float(x))
+                resp[county]['biscuit_budget_int'] = int(biscuit_budget_int)
+            else:
+                if not biscuit_budget:
+                    biscuit_budget = 0
+                resp[county]['biscuit_budget_int'] = int(biscuit_budget)
+            print "%s ====== %s" % (county, resp[county]['biscuit_budget_int'])
+            lst.append(dict(county=county, biscuit_budget_int=resp[county]['biscuit_budget_int']))
+                
+        except Exception, err:
+            print "ERROR: '%s' failed to sort: %s" % (county, err)
+            raise err
+
+    sorted_resp = sorted(lst, key=lambda k: k['biscuit_budget_int'])
+
+    if args.get('sorted'):
+        return jsonify(sorted_resp)
+    else:
+        return jsonify(resp)
 
 
 ### END OF VIEWS
