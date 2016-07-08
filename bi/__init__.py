@@ -30,7 +30,6 @@ def counties():
     county = args['county']
     db = get_db()
     county_data = db.get(slugify(county))
-    print "DEBUG: %s  -  %s" % (slugify(county), county_data)
     biscuit_budget = eval(county_data).get('hospitality_budget', 0)
     biscuit_budget_str = eval(county_data).get('hospitality_budget', 0)
     if not biscuit_budget:
@@ -64,7 +63,6 @@ def data():
                 if not biscuit_budget:
                     biscuit_budget = 0
                 resp[county]['biscuit_budget_int'] = int(biscuit_budget)
-            print "%s ====== %s" % (county, resp[county]['biscuit_budget_int'])
             lst.append(dict(county=county, biscuit_budget_int=resp[county]['biscuit_budget_int']))
                 
         except Exception, err:
