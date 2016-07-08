@@ -32,6 +32,7 @@ def counties():
     county_data = db.get(slugify(county))
     print "DEBUG: %s  -  %s" % (slugify(county), county_data)
     biscuit_budget = eval(county_data).get('hospitality_budget', 0)
+    biscuit_budget_str = eval(county_data).get('hospitality_budget', 0)
     if not biscuit_budget:
         biscuit_budget = 0
     if isinstance(biscuit_budget, int) or biscuit_budget.isdigit():
@@ -39,7 +40,7 @@ def counties():
     else: # 
         for x in biscuit_budget.replace('million', '').split():
             biscuit = "%s000000" % int(float(x))
-    return render_template('index.html', biscuit_budget=int(biscuit))
+    return render_template('index.html', biscuit_budget=int(biscuit), biscuit_budget_str=biscuit_budget_str)
 
 
 @app.route('/data.json')
