@@ -16,12 +16,24 @@
 
 <body class="home preload">
 
+	<!-- fb share button js -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=143707709109068";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<header class="top">
 		<div class="wrap clearfix">
 			<a href="" class="logo">&nbsp;</a>
 			<div class="social-sharing">
                 <!-- place social buttons here -->
                 <a href="https://twitter.com/intent/tweet?button_hashtag=BiscuitIndex&text=Learn%20how%20much%20your%20county%20spends%20on%20tea%20and%20biscuits" class="twitter-hashtag-button" data-size="large" data-url="http://biscuitindex.codeforkenya.org">Tweet #BiscuitIndex</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<div class="fb-share-button" data-href="http://biscuitindex.codeforkenya.org/" data-layout="button" data-size="large" data-mobile-iframe="true" style="line-height:15px;"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbiscuitindex.codeforkenya.org%2F&amp;src=sdkpreparse">Share</a></div>
 			</div>
 		</div>
 	</header><!--/ top -->
