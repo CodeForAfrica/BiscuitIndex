@@ -29,7 +29,7 @@ body {
 }
 
  .wrap {
-	width: 1200px;
+	width: 1280px;
 	margin: 0 auto;
 	text-align: left;
 	position: relative;
@@ -64,7 +64,7 @@ body {
 // Prompt
 
 .prompt {
-	background-color: $purple-secondary;
+	background-color: #204d62;
 	background-image: image-url('prompt-bg.jpg');
 	color: #fff;
 	font-size: 23px;
@@ -74,6 +74,7 @@ body {
 	.intro-text {
 		width: 30%;
 		font-size: 18px;
+		opacity: 0.8;
 	}
 
 	.action-box {
@@ -82,7 +83,7 @@ body {
 		.inner {
 			margin-left: 5%;
 			padding-left: 5%;
-			border-left: 1px dotted rgba(#fff,0.2);
+			border-left: 1px dashed rgba(#fff,0.2);
 		}
 	}
 
@@ -137,15 +138,18 @@ body {
 		display: inline-block;
 		text-transform: uppercase;
 		padding: 7px 48px;
-		border: 2px solid rgba(#fff,0.5);
 		font-size: 18px;
-		color: #fff;
+		color: #4d7591;
 		font-weight: 600;
+		box-shadow: 0 0 11px rgba(#000,0.22);
 		background: rgba(#000,0.1);
+		@include border-radius(3px);
+		@include transition(all 0.3s ease);
+		@include background-image(linear-gradient(white, #e5ebef));
 
 		&:hover {
 			border-color: rgba(#fff,0.75);
-			background: rgba(#000,0.25);			
+			@include background-image(linear-gradient(#e5ebef, white));
 		}
 	}
 
@@ -195,6 +199,7 @@ body {
 		// padding: 5px 10px 5px 20px;
 		// background: rgba($purple-primary, 0.2);
 		margin: 2px 0 10px;
+		color: $blue-primary;
 	}
 
 	#output-comparison {
@@ -249,6 +254,21 @@ body {
 	.icon-row {
 		position: relative;
 		border-bottom: 1px solid $rose-gold-secondary;
+		width: 33.33%;
+		float: left;
+
+		> div {
+			border-left: 1px solid $rose-gold-secondary;
+		}
+
+		&:first-child > div {
+			border-left: none;
+		}
+	}
+
+	.dynamic-chart {
+		border-top: 1px solid $rose-gold-secondary;
+		position: relative;
 
 		&:after {
 			height: 1px;
@@ -259,10 +279,10 @@ body {
 		}
 	}
 
+
 	.batch-count {
-		padding: 40px 10%;
+		padding: 25px 10% 15px;
 		font-size: 40px;
-		border-left: 1px solid $rose-gold-secondary;
 		text-align: center;
 		color: $purple-primary;
 		font-weight: 700;
@@ -271,13 +291,14 @@ body {
 		div { position: relative; }
 
 		em {
-			font-weight: 100;
+			font-weight: 700;
 			font-size: 70%;
-			opacity: 0.5;
-			padding-right: 2px;
 			position: absolute;
-			right: 100%;
+			left: -54px;
 			top: 10px;
+			background: $rose-gold-secondary;
+			padding: 5px 12px;
+			@include border-radius(40px);
 		}
 	}
 
@@ -290,6 +311,8 @@ body {
 
 	.icon-container {
 		padding: 22px 45px;
+
+		&.output-icons { min-height: 109px; }
 	}
 
 	.icon-legend {
@@ -299,14 +322,6 @@ body {
 		text-transform: uppercase;
 		font-size: 16px;
 		border-top: 1px solid $rose-gold-secondary;
-
-		&:after {
-			height: 1px;
-			width: 100%;
-			background: $rose-gold-secondary;
-			left: 100%;
-			bottom: 100%;
-		}
 
 		i {
 			position: relative;
@@ -346,7 +361,7 @@ body {
 // Footer
 
 .bottom {
-	background: $purple-secondary;
+	background: #81c0de;
 	color: rgba(#fff,0.9);
 	font-size: 15px;
 

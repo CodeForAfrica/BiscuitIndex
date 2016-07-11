@@ -98,9 +98,9 @@ jQuery(function($) {
 			// approximate number of icons we want
 
 			var iconMax = 80, // default
-				iconSodaMax = 90, // specific to soda
-				iconCoffeeMax = 75, // specific to coffee
-				iconCupcakeMax = 150, // specific to cupcakes
+				iconSodaMax = 40, // specific to soda
+				iconCoffeeMax = 35, // specific to coffee
+				iconCupcakeMax = 45, // specific to cupcakes
 				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
 				outputIconsNumber = Math.round(comparison / outputRatio),
 				outputRatioUnits = '';
@@ -118,18 +118,18 @@ jQuery(function($) {
 								// ndio zisiingie zote tu pap!
 
 			// main output loop
-			for (var i = outputIconsNumber - 1; i >= 0; i--) {
+			for (var i = 0; i < outputIconsNumber; i++) {
 				if (urlCat == 'rent') {
-					mainOutputString += '<i class="house" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+					mainOutputString += '<i class="house" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
 					outputComparisonUnits = 'people';
 					outputRatioUnits = 'homes';
 				} else if (urlCat == 'fees') {
-					mainOutputString += '<i class="fee" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+					mainOutputString += '<i class="fee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
 					outputComparisonUnits = 'students';
 					outputRatioUnits = 'students';
 					$('#output-ratio').siblings('i').removeAttr('class').addClass('fee');
 				} else if (urlCat == 'commute') {
-					mainOutputString += '<i class="commute" style="transition-delay:' + delay.toFixed(2) + 's"></i> ';
+					mainOutputString += '<i class="commute" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
 					outputComparisonUnits = 'people';
 					outputRatioUnits = 'daily commutes';
 					$('#output-ratio').siblings('i').removeAttr('class').addClass('commute');
@@ -175,7 +175,7 @@ jQuery(function($) {
 
 			// soda loop
 			for (var i = 0; i < sodaIconsNumber; i++) {
-				sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+				sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * sodaRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
@@ -183,7 +183,7 @@ jQuery(function($) {
 
 			// coffee loop
 			for (var i = 0; i < coffeeIconsNumber; i++) {
-				coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+				coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * coffeeRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
@@ -191,7 +191,7 @@ jQuery(function($) {
 
 			// cupcake loop
 			for (var i = 0; i < cupcakeIconsNumber; i++) {
-				cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+				cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * cupcakeRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
@@ -200,6 +200,8 @@ jQuery(function($) {
 			$('.soda-icons').html(sodaString);
 			$('.coffee-icons').html(coffeeString);
 			$('.cupcake-icons').html(cupcakeString);
+
+			gridSet('.dynamic-chart', '.icon-container');
 
 
 			// when sliders are moved
@@ -229,19 +231,19 @@ jQuery(function($) {
 
 				// soda loop, generate markup
 				for (var i = 0; i < sodaIconsNumber; i++) {
-					sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+					sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * sodaRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
 				// coffee loop
 				for (var i = 0; i < coffeeIconsNumber; i++) {
-					coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+					coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * coffeeRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
 				// cupcake loop
 				for (var i = 0; i < cupcakeIconsNumber; i++) {
-					cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + (i + 1) + '"></i> ';
+					cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * cupcakeRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
@@ -251,9 +253,9 @@ jQuery(function($) {
 				$('.cupcake-icons').html(cupcakeString);
 
 				// pima pima, basic stuff
-				$('#batch-count--soda').html(Math.round(sodaCount / 30).toLocaleString()); // 30 sodas in a crate
-				$('#batch-count--coffee').html('<em>+</em>' + Math.round(coffeeCount * 0.2).toLocaleString()); // 5 cups per litre
-				$('#batch-count--cupcake').html('<em>+</em>' + Math.round(cupcakeCount / 6).toLocaleString()); // 6 cupcakes in a packet
+				$('#batch-count--soda').html(sodaCount.toLocaleString()); // 30 sodas in a crate
+				$('#batch-count--coffee').html('<em>+</em>' + coffeeCount.toLocaleString()); // 5 cups per litre
+				$('#batch-count--cupcake').html('<em>+</em>' + cupcakeCount.toLocaleString()); // 6 cupcakes in a packet
 
 				// update URI without reload
 				if (history.pushState) {
@@ -293,13 +295,12 @@ jQuery(function($) {
 
 				diff = (scrollPos - (sideBarPos - 88))
 
-				if ((diff > 0) && (wWidth > 800) && (diff < bHeight + 370)) {
+				if ((diff > 0) && (wWidth > 800) && (diff < bHeight / 2)) {
 					$sideBar.css({'margin-top':diff});
 				} else if (diff < 0) {
 					$sideBar.removeAttr('style');
 				}
 
-				console.log(diff);
 			});
 
 		}
@@ -365,6 +366,22 @@ jQuery(function($) {
 				val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
 			}
 			return val;
+		}
+
+		// equalize columns
+
+		function gridSet( wall, bricks ) {
+			var maxHeight = -1,
+				$bricks = $(wall).find(bricks);
+
+			$bricks.each( function() {
+				$(this).css({ 'height': 'auto' });
+				maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+			});
+
+			$bricks.each( function() {
+				$(this).height(maxHeight);
+			});
 		}
 
 	});
