@@ -279,6 +279,32 @@ body {
 		}
 	}
 
+	.mid-desc {
+		position: relative;
+		padding: 20px 45px;
+		background: #d3dde4;
+		font-size: 16px;
+		color: $blue-primary;
+		margin-top: -1px;
+
+		&:before {
+			width: 0;
+			height: 0;
+			left: 55px;
+			bottom: 100%;
+			border-bottom: 8px solid #d3dde4;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+		}
+		&:after {
+			width: 100%;
+			height: 100%;
+			left: 100%;
+			top: 0;
+			background: #d3dde4;
+		}
+	}
+
 
 	.batch-count {
 		padding: 25px 10% 15px;
@@ -374,6 +400,15 @@ body {
 		font-size: 20px;
 		font-weight: 600;
 		margin-bottom: 25px;
+	}
+
+	a {
+		color: #4d7591;
+		@include transition(all 0.3s ease);
+
+		&:hover {
+			border-bottom: 1px dotted;
+		}
 	}
 }
 
