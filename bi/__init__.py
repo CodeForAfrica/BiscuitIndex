@@ -1,5 +1,5 @@
 from flask import (Flask, g, request, session, redirect,
-        url_for, render_template, jsonify)
+                   url_for, render_template, jsonify)
 from flask_script import Manager
 import redis
 import os
@@ -7,16 +7,15 @@ from biscuit_index.bi import config as config_file
 from normality import slugify
 
 app = Flask(__name__,
-        template_folder=os.getenv('BISCUIT_INDEX_TEMPLATES'),
-        static_folder=os.getenv('BISCUIT_INDEX_STATIC'))
+            template_folder=os.getenv('BISCUIT_INDEX_TEMPLATES'),
+            static_folder=os.getenv('BISCUIT_INDEX_STATIC'))
 app.config.from_object(config_file)
+
 
 def get_db():
     if not hasattr(g, 'redis'):
         g.redis = redis.StrictRedis(**app.config['REDIS'])
     return g.redis
-
-### VIEWS
 
 
 @app.route('/')
@@ -36,12 +35,15 @@ def counties():
         biscuit_budget = 0
     if isinstance(biscuit_budget, int) or biscuit_budget.isdigit():
         biscuit = biscuit_budget
-    else: # 
+    else:
         for x in biscuit_budget.replace('million', '').split():
             biscuit = "%s000000" % int(float(x))
 
     print biscuit, biscuit_budget_str
-    return render_template('index.html', biscuit_budget=int(biscuit), biscuit_budget_str=biscuit_budget_str, counties=app.config['COUNTIES'])
+    return render_template('index.html',
+                           biscuit_budget=int(biscuit),
+                           biscuit_budget_str=biscuit_budget_str,
+                           counties=app.config['COUNTIES'])
 
 
 @app.route('/data.json')
@@ -65,8 +67,8 @@ def data():
                 if not biscuit_budget:
                     biscuit_budget = 0
                 resp[county]['biscuit_budget_int'] = int(biscuit_budget)
-            lst.append(dict(county=county, biscuit_budget_int=resp[county]['biscuit_budget_int']))
-                
+            lst.append(dict(county=county,
+                       biscuit_budget_int=resp[county]['biscuit_budget_int']))
         except Exception, err:
             print "ERROR: '%s' failed to sort: %s" % (county, err)
             raise err
@@ -78,8 +80,6 @@ def data():
     else:
         return jsonify(resp)
 
-
-### END OF VIEWS
 
 manager = Manager(app)
 
