@@ -39,7 +39,7 @@ def counties():
         for x in biscuit_budget.replace('million', '').split():
             biscuit = "%s000000" % int(float(x))
 
-    print biscuit, biscuit_budget_str
+    #print county, biscuit, biscuit_budget_str
     return render_template('index.html',
                            biscuit_budget=int(biscuit),
                            biscuit_budget_str=biscuit_budget_str,
