@@ -53,10 +53,11 @@
 							<option value="commute">Daily Commutes</option>
 						</select>? <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast"><span class="currency">KES</span>
 					</p>
-					<p>Compare this to <select name="county" id="county">
-							<option value="nairobi">Nairobi</option>
-							<option value="nyeri">Nyeri</option>
-							<option value="muranga">Murang'a</option>
+                    <p>Compare this to <select name="county" id="county">
+
+                        {% for county in counties %}
+                        <option value="{{county}}">{{county}}</option>
+                        {%endfor%}
 						</select> County’s expenditure on <em>&ldquo;tea and biscuits&rdquo;.</em></p>
 					<p><a href="" id="compare" class="compare fx">Compare</a></p>				
 				</div>
@@ -161,8 +162,8 @@
 	<script type="text/javascript">
 		// extract county hospitality budget from JSON 
 		// and assign it here. The rest is magic.
-        var countyBudgetInteger = 96000000,
-            countyBudgetString 	= '96 million';
+        var countyBudgetInteger = {{ biscuit_budget }},
+            countyBudgetString 	= {{ biscuit_budget_str }};
 	</script>
 </body>
 </html>

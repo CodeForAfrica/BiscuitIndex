@@ -25,7 +25,7 @@ def counties():
     index.html
     '''
     if not request.args:
-        return render_template('index.html')
+        return render_template('index.html', counties=app.config['COUNTIES'])
     args = request.args.copy()
     county = args['county']
     db = get_db()
@@ -39,7 +39,9 @@ def counties():
     else: # 
         for x in biscuit_budget.replace('million', '').split():
             biscuit = "%s000000" % int(float(x))
-    return render_template('index.html', biscuit_budget=int(biscuit), biscuit_budget_str=biscuit_budget_str)
+
+    print biscuit, biscuit_budget_str
+    return render_template('index.html', biscuit_budget=int(biscuit), biscuit_budget_str=biscuit_budget_str, counties=app.config['COUNTIES'])
 
 
 @app.route('/data.json')
