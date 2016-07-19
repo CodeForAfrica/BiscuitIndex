@@ -32,3 +32,5 @@ DATABASE = dict(
         host=db_host.split(',')[2],
         table='BISCUIT_INDEX'
         )
+
+NODATA = ['baringo', 'kirinyaga', 'lamu', 'bomet', 'uasin-gishu']

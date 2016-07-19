@@ -23,8 +23,12 @@ def counties():
     '''
     index.html
     '''
+    counties_list = []
+    for each in app.config['COUNTIES']:
+        if not each in app.config['NODATA']:
+            counties_list.append(each)
     if not request.args:
-        return render_template('index.html', counties=app.config['COUNTIES'])
+        return render_template('index.html', counties=counties_list)
     args = request.args.copy()
     county = args['county']
     db = get_db()
@@ -43,7 +47,7 @@ def counties():
     return render_template('index.html',
                            biscuit_budget=int(biscuit),
                            biscuit_budget_str=biscuit_budget_str,
-                           counties=app.config['COUNTIES'])
+                           counties=counties_list)
 
 
 @app.route('/data.json')
