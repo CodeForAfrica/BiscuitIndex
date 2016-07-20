@@ -70,7 +70,8 @@ jQuery(function($) {
 				categoryName,
 				categoryDescription,
 				comparison,
-				comparisonString;
+				comparisonString,
+				comparisonUnits;
 
 			// set human-readable labels
 			comparatives = JSON.parse(comparatives.replace(/'/g, '"').replace(/None/g, '"None"'));
@@ -78,6 +79,7 @@ jQuery(function($) {
 			    if (k == urlCat) {
 			        categoryName = comparatives[k].name;
 			        categoryDescription = comparatives[k].description;
+			        comparisonUnits = comparatives[k].comparative_unit;
 			        break;
 			    }
 			}
@@ -87,6 +89,7 @@ jQuery(function($) {
 			$('#output-county').html(urlCounty);
 
 
+
 			// calculate comparison value
 			comparison = countyBudgetInteger / urlExp;
 			comparison = Math.round(comparison);
@@ -94,6 +97,9 @@ jQuery(function($) {
 			
 			// print it
 			$('#output-comparison').html(comparisonString);
+
+			text = urlCounty[0].toUpperCase() + urlCounty.slice(1)  + '\'s hospitality budget ' + countyBudgetString + ' ' + categoryDescription + ' ' + comparisonString + ' ' + comparisonUnits
+			$('#twtbtn').attr('href', 'https://twitter.com/intent/tweet?button_hashtag=BiscuitIndex&text=' + text)
 
 
 			// approximate number of icons we want
