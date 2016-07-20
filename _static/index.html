@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="assets/css/css.css" type="text/css" />
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,300,300italic' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <script>
+        var comparatives = '{{comparatives}}';
+    </script>
 </head>
 
 <body class="home preload">
@@ -47,11 +50,10 @@
 			</div>
 			<div class="right action-box">
 				<div class="inner">
-					<p>How much do you spend on <select name="category" id="category">
-							<option value="rent">Monthly Rent</option>
-							<option value="fees">School Fees per Term</option>
-							<option value="commute">Daily Commutes</option>
-							<option value="maize" data-type="false" data-amount="5000">Cost of Maize</option>
+                    <p>How much do you spend on <select name="category" id="category">
+                        {% for comparative in comparatives %}
+                        <option value="{{ comparative }}" data-type="{{ comparatives[comparative]['mutable'] }}" data-amount="{{ comparatives[comparative]['amount'] }}">{{ comparatives[comparative]['name'] }}</option>
+                        {% endfor %}
 						</select>? <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast"><span class="currency">KES</span>
 					</p>
                     <p>Compare this to <select name="county" id="county">
@@ -60,7 +62,7 @@
                         <option value="{{county}}">{{county}}</option>
                         {%endfor%}
 						</select> County’s expenditure on <em>&ldquo;tea and biscuits&rdquo;.</em></p>
-					<p><a href="" id="compare" class="compare fx">Compare</a></p>				
+					<p><a href="" id="compare" class="compare fx">Compare</a></p>
 				</div>
 			</div>
 		</div>
