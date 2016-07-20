@@ -121,7 +121,7 @@ jQuery(function($) {
 			for (var i = 0; i < outputIconsNumber; i++) {
 			    for (k in comparatives) {
 			        if (k == urlCat) {
-			            mainOutputString += '<i class="'+ k +''" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
+			            mainOutputString += '<i class="'+ k +'" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
                         outputComparisonUnits = comparatives[k].name;
                         outputRatioUnits = comparatives[k].name;
                         $('#output-ratio').siblings('i').removeAttr('class').addClass(k);
