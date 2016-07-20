@@ -72,14 +72,12 @@ jQuery(function($) {
 				comparisonString;
 
 			// set human-readable labels
-			if (urlCat == 'rent') {
-				categoryName = 'Monthly Rent';
-			} else if (urlCat == 'fees') {
-				categoryName = 'School Fees';
-			} else if (urlCat == 'commute') {
-				categoryName = 'Daily Commutes';
-			} else if (urlCat == 'maize') {
-				categoryName = 'Bags of maize';
+			comparatives = JSON.parse(comparatives.replace(/'/g, '"').replace(/None/g, '"None"'));
+			for (k in comparatives) {
+			    if (k == urlCat) {
+			        categoryName = comparatives[k].name;
+			        break;
+			    }
 			}
 
 			// populate the DOM
@@ -121,26 +119,15 @@ jQuery(function($) {
 
 			// main output loop
 			for (var i = 0; i < outputIconsNumber; i++) {
-				if (urlCat == 'rent') {
-					mainOutputString += '<i class="house" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
-					outputComparisonUnits = 'people';
-					outputRatioUnits = 'homes';
-				} else if (urlCat == 'fees') {
-					mainOutputString += '<i class="fee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
-					outputComparisonUnits = 'students';
-					outputRatioUnits = 'students';
-					$('#output-ratio').siblings('i').removeAttr('class').addClass('fee');
-				} else if (urlCat == 'commute') {
-					mainOutputString += '<i class="commute" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
-					outputComparisonUnits = 'people';
-					outputRatioUnits = 'daily commutes';
-					$('#output-ratio').siblings('i').removeAttr('class').addClass('commute');
-				} else if (urlCat == 'maize') {
-					mainOutputString += '<i class="fee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
-					outputComparisonUnits = 'bags of maize';
-					outputRatioUnits = 'bags of maize';
-					$('#output-ratio').siblings('i').removeAttr('class').addClass('fee');
-				}
+			    for (k in comparatives) {
+			        if (k == urlCat) {
+			            mainOutputString += '<i class="'+ k +''" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
+                        outputComparisonUnits = comparatives[k].name;
+                        outputRatioUnits = comparatives[k].name;
+                        $('#output-ratio').siblings('i').removeAttr('class').addClass(k);
+                        break;
+			        }
+			    }
 				delay += 0.005;
 			}
 
