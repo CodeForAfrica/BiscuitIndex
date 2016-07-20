@@ -88,7 +88,6 @@ jQuery(function($) {
 
 
 			// calculate comparison value
-
 			comparison = countyBudgetInteger / urlExp;
 			comparison = Math.round(comparison);
 			comparisonString = comparison.toLocaleString();
@@ -104,7 +103,7 @@ jQuery(function($) {
 				iconCoffeeMax = 35, // specific to coffee
 				iconCupcakeMax = 45, // specific to cupcakes
 				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
-				outputIconsNumber = Math.round(comparison / outputRatio),
+				outputIconsNumber = Math.ceil(comparison / outputRatio),
 				outputRatioUnits = '';
 			
 
@@ -124,8 +123,8 @@ jQuery(function($) {
 			    for (k in comparatives) {
 			        if (k == urlCat) {
 			            mainOutputString += '<i class="'+ k +'" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
-                        outputComparisonUnits = comparatives[k].name;
-                        outputRatioUnits = comparatives[k].name;
+                        outputComparisonUnits = comparatives[k].comparative_unit;
+                        outputRatioUnits = comparatives[k].comparative_unit;
                         $('#output-ratio').siblings('i').removeAttr('class').addClass(k);
                         break;
 			        }
