@@ -34,3 +34,31 @@ DATABASE = dict(
         )
 
 NODATA = ['baringo', 'kirinyaga', 'lamu', 'bomet', 'uasin-gishu']
+
+COMPARATIVES = dict(
+        maize=dict(
+            name="Maize flour",
+            mutable="false",
+            amount=124,
+            ),
+        rent=dict(
+            name="Monthly house rent",
+            mutable="true",
+            amount=None
+            ),
+        commutes=dict(
+            name="Daily commutes",
+            mutable="true",
+            amount=None
+            ),
+        fees=dict(
+            name="School fees per term",
+            mutable="true",
+            amount=None
+            ),
+        dialysis=dict(
+            name="Dialysis machine",
+            mutable="false",
+            amount=3000000
+            ),
+        )

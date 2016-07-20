@@ -47,11 +47,11 @@
 			</div>
 			<div class="right action-box">
 				<div class="inner">
-					<p>How much do you spend on <select name="category" id="category">
-							<option value="rent">Monthly Rent</option>
-							<option value="fees">School Fees per Term</option>
-							<option value="commute">Daily Commutes</option>
-							<option value="maize" data-type="immutable" data-amount="5000">Cost of Maize</option>
+                    <p>How much do you spend on <select name="category" id="category">
+                            {% for comparative in comparatives %}
+                            <option value="{{ comparative }}" data-type="{{ comparatives[comparative]['mutable'] }}" data-amount="{{ comparatives[comparative]['amount'] }}">{{ comparatives[comparative]['name'] }}</option>
+                            {% endfor %}
+
 						</select>? <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast"><span class="currency">KES</span>
 					</p>
                     <p>Compare this to <select name="county" id="county">
