@@ -78,6 +78,8 @@ jQuery(function($) {
 				categoryName = 'School Fees';
 			} else if (urlCat == 'commute') {
 				categoryName = 'Daily Commutes';
+			} else if (urlCat == 'maize') {
+				categoryName = 'Bags of maize';
 			}
 
 			// populate the DOM
@@ -133,6 +135,11 @@ jQuery(function($) {
 					outputComparisonUnits = 'people';
 					outputRatioUnits = 'daily commutes';
 					$('#output-ratio').siblings('i').removeAttr('class').addClass('commute');
+				} else if (urlCat == 'maize') {
+					mainOutputString += '<i class="fee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * outputRatio).toLocaleString() + '"></i> ';
+					outputComparisonUnits = 'bags of maize';
+					outputRatioUnits = 'bags of maize';
+					$('#output-ratio').siblings('i').removeAttr('class').addClass('fee');
 				}
 				delay += 0.005;
 			}
@@ -384,5 +391,28 @@ jQuery(function($) {
 			});
 		}
 
+        console.log('doc ready')
+        //If an immutable comparison is chosen, do not show the dynamic chart and controls
+        $('#category').val()
+        if ($('option:selected', $('#category')).attr('data-type') == 'immutable') {
+            console.log('hiding')
+            $('.dynamic-chart').css('display', 'none')
+            $('.controls').css('display', 'none')
+        } else {
+            console.log('showing')
+            $('.dynamic-chart').css('display', 'block')
+            $('.controls').css('display', 'block')
+        }
+        //Bind comparison element change to an action
+        $('#category').change(function() {
+            if ($('option:selected', this).attr('data-type') == 'immutable') {
+                $('#expenditure').val('5000');
+                $('#expenditure').attr('disabled', 'disabled');
+            } else {
+                $('#expenditure').val('');
+                $("#expenditure").removeAttr("disabled");
+
+            }
+        });
 	});
 });

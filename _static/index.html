@@ -7,6 +7,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<meta property="og:title" content="This will be the title displayed!" />
+	<meta property="og:description" content="This will be the description that shows below the title!" />
 	<title>Biscuit Index</title>
 	<script src="assets/js/modernizr-2.6.2.min.js"></script>
 	<link rel="stylesheet" href="assets/css/css.css" type="text/css" />
@@ -51,6 +53,7 @@
 							<option value="rent">Monthly Rent</option>
 							<option value="fees">School Fees per Term</option>
 							<option value="commute">Daily Commutes</option>
+							<option value="maize" data-type="immutable" data-amount="5000">Cost of Maize</option>
 						</select>? <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast"><span class="currency">KES</span>
 					</p>
                     <p>Compare this to <select name="county" id="county">
@@ -162,8 +165,8 @@
 	<script type="text/javascript">
 		// extract county hospitality budget from JSON 
 		// and assign it here. The rest is magic.
-        var countyBudgetInteger = {{ biscuit_budget }},
-            countyBudgetString 	= '{{ biscuit_budget_str }}';
+		var countyBudgetInteger = {{ biscuit_budget }},
+		countyBudgetString 	= '{{ biscuit_budget_str }}';
 	</script>
 </body>
 </html>
