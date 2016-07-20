@@ -391,19 +391,16 @@ jQuery(function($) {
 			});
 		}
 
-        console.log('doc ready')
         //If an immutable comparison is chosen, do not show the dynamic chart and controls
         $('#category').val()
         if ($('option:selected', $('#category')).attr('data-type') == 'immutable') {
-            console.log('hiding')
             $('.dynamic-chart').css('display', 'none')
             $('.controls').css('display', 'none')
         } else {
-            console.log('showing')
             $('.dynamic-chart').css('display', 'block')
             $('.controls').css('display', 'block')
         }
-        //Bind comparison element change to an action
+        //Bind comparison element change to an action: Disabling the input area
         $('#category').change(function() {
             if ($('option:selected', this).attr('data-type') == 'immutable') {
                 $('#expenditure').val('5000');
