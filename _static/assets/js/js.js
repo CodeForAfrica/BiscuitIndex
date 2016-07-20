@@ -68,6 +68,7 @@ jQuery(function($) {
 
 			var countyName,
 				categoryName,
+				categoryDescription,
 				comparison,
 				comparisonString;
 
@@ -76,12 +77,13 @@ jQuery(function($) {
 			for (k in comparatives) {
 			    if (k == urlCat) {
 			        categoryName = comparatives[k].name;
+			        categoryDescription = comparatives[k].description;
 			        break;
 			    }
 			}
 
 			// populate the DOM
-			$('#output-category').html(categoryName);
+			$('#output-category').html(categoryDescription);
 			$('#output-county').html(urlCounty);
 
 
