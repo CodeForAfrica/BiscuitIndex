@@ -40,25 +40,35 @@ COMPARATIVES = dict(
             name="Maize flour",
             mutable="false",
             amount=124,
+            description="is enough to buy",
+            comparative_unit="packets of maize flour"
             ),
         house=dict(
             name="Monthly house rent",
             mutable="true",
-            amount=None
+            amount=None,
+            description="can pay your rent for",
+            comparative_unit="months"
             ),
         commute=dict(
             name="Daily commutes",
             mutable="true",
-            amount=None
+            amount=None,
+            description="equals your spending on commuting for",
+            comparative_unit="days"
             ),
         fee=dict(
             name="School fees per term",
             mutable="true",
-            amount=None
+            amount=None,
+            description="is enough to pay your term school fees for",
+            comparative_unit="students"
             ),
         dialysis=dict(
             name="Dialysis machine",
             mutable="false",
-            amount=3000000
+            amount=3000000,
+            description="is enough to purchase",
+            comparative_unit="dialysis machines"
             ),
         )
