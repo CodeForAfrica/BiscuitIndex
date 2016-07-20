@@ -41,17 +41,17 @@ COMPARATIVES = dict(
             mutable="false",
             amount=124,
             ),
-        rent=dict(
+        house=dict(
             name="Monthly house rent",
             mutable="true",
             amount=None
             ),
-        commutes=dict(
+        commute=dict(
             name="Daily commutes",
             mutable="true",
             amount=None
             ),
-        fees=dict(
+        fee=dict(
             name="School fees per term",
             mutable="true",
             amount=None
