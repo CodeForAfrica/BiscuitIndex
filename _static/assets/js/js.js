@@ -393,7 +393,7 @@ jQuery(function($) {
 
         //If an immutable comparison is chosen, do not show the dynamic chart and controls
         $('#category').val()
-        if ($('option:selected', $('#category')).attr('data-type') == 'immutable') {
+        if ($('option:selected', $('#category')).attr('data-type') == 'false') {
             $('.dynamic-chart').css('display', 'none')
             $('.controls').css('display', 'none')
         } else {
@@ -402,8 +402,8 @@ jQuery(function($) {
         }
         //Bind comparison element change to an action: Disabling the input area
         $('#category').change(function() {
-            if ($('option:selected', this).attr('data-type') == 'immutable') {
-                $('#expenditure').val('5000');
+            if ($('option:selected', this).attr('data-type') == 'false') {
+                $('#expenditure').val($('option:selected', this).attr('data-amount'));
                 $('#expenditure').attr('disabled', 'disabled');
             } else {
                 $('#expenditure').val('');
