@@ -38,7 +38,8 @@ def counties():
                     request_id = str(uuid.uuid4()),
                     client = request.environ.get('HTTP_USER_AGENT'),
                     now=datetime.now(),
-                    args=request.environ.get('QUERY_STRING')
+                    args=request.environ.get('QUERY_STRING'),
+                    server=request.environ.get('SERVER_NAME')
                     )
                 )
         print "inserted %s in %s seconds" % (
