@@ -1,10 +1,10 @@
 from flask import (Flask, g, request, session, redirect,
                    url_for, render_template, jsonify)
 from flask_script import Manager
-import redis
-import os
+import redis, os, dataset, uuid
 from biscuit_index.bi import config as config_file
 from normality import slugify
+from datetime import datetime
 
 app = Flask(__name__,
             template_folder=os.getenv('BISCUIT_INDEX_TEMPLATES'),
@@ -18,11 +18,36 @@ def get_db():
     return g.redis
 
 
+def get_mysql():
+    if not hasattr(g, 'mysql'):
+        g.mysql = dataset.connect("mysql://{username}:{password}@{host}".format(**app.config['DATABASE']))
+    return g.mysql
+
+
 @app.route('/')
 def counties():
     '''
     index.html
     '''
+    try:
+        mysql = get_mysql()
+        table = mysql[app.config['DATABASE']['logs']]
+        start = datetime.now()
+        saved = table.insert(
+                dict(
+                    request_id = str(uuid.uuid4()),
+                    client = request.environ.get('HTTP_USER_AGENT'),
+                    now=datetime.now(),
+                    args=request.environ.get('QUERY_STRING')
+                    )
+                )
+        print "inserted %s in %s seconds" % (
+                saved, (datetime.now()-start).seconds
+                )
+
+    except Exception, err:
+        print "Error: Couldn't get request parameters: %s" % err
+
     counties_list = []
     for each in app.config['COUNTIES']:
         if not each in app.config['NODATA']:

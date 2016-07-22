@@ -30,7 +30,8 @@ DATABASE = dict(
         username=db_host.split(',')[0],
         password=db_host.split(',')[1],
         host=db_host.split(',')[2],
-        table='BISCUIT_INDEX'
+        table='BISCUIT_INDEX',
+        logs='REQUEST_LOG'
         )
 
 NODATA = ['baringo', 'kirinyaga', 'lamu', 'bomet', 'uasin-gishu']
