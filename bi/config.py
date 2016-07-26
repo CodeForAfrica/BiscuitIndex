@@ -40,7 +40,7 @@ COMPARATIVES = dict(
         maize=dict(
             name="Maize flour",
             mutable="false",
-            amount=3200,
+            amount=124,
             description="is enough to buy",
             comparative_unit="packets of maize flour"
             ),
