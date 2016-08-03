@@ -111,6 +111,9 @@ def data():
     else:
         return jsonify(resp)
 
+@app.route('/story')
+def story():
+    return render_template('story.html')
 
 manager = Manager(app)
 
