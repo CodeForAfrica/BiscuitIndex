@@ -390,18 +390,31 @@ body {
     display: inline-block;
     float:left;
 }
-.news-box a {
+.news-box span {
     display:block;
     background-color:#4d7591;
-    padding:5px;
+    padding:0px 5px;
     color:#fff;
     font-size:12px;
     width:60px;
+}
+.news-box a {
+    color:#333;
+}
+.news-box a:hover {
+    color:$blue-primary;
+    cursor:pointer;
 }
 .news-section {
     background: #fff;
     text-align:left;
     padding:20px 0px;
+}
+.news-section h1 {
+    color: #333;
+    font-size:24px;
+    text-transform:uppercase;
+    margin-bottom: 10px;
 }
 
 
