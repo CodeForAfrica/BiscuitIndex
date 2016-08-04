@@ -56,5 +56,10 @@
 			</div>
 		</div>
 	</footer><!--/ bottom -->
+    <script src="assets/js/jquery-1.8.1.min.js"></script>
+    <script>
+        text = $('#title').html() + ' ' + window.location.href
+        $('#twtbtn').attr('href', 'https://twitter.com/intent/tweet?button_hashtag=BiscuitIndex&text=' + text)
+    </script>
 </body>
 </html>
