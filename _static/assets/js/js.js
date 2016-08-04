@@ -1,10 +1,4 @@
-// 	@martianskills up in this script. buda boss.
 //
-// 	I could make it more modular, object oriented,
-// 	but I've been at it for 8 hours and I don't think
-// 	I'm pretty sure I'm over the budget anyways.
-//
-// 	Life ni hard; hivo ndo kunaendanga.
 
 jQuery(function($) {
 	$(document).ready(function() {
@@ -91,9 +85,17 @@ jQuery(function($) {
 
 
 			// calculate comparison value
-			comparison = countyBudgetInteger / urlExp;
-			comparison = Math.round(comparison);
+			comparison = Math.round(countyBudgetInteger / urlExp);
 			comparisonString = comparison.toLocaleString();
+
+			// Structure the months more favourably
+			if (comparisonUnits.toLowerCase() == 'months') {
+				if (comparison > 12) {
+					comparison = Math.round(comparison / 12);
+					comparisonString = comparison.toLocaleString();
+					comparisonUnits = 'Years'
+				}
+			}
 			
 			// print it
 			$('#output-comparison').html(comparisonString);
@@ -108,7 +110,7 @@ jQuery(function($) {
 				iconSodaMax = 40, // specific to soda
 				iconCoffeeMax = 35, // specific to coffee
 				iconCupcakeMax = 45, // specific to cupcakes
-				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
+				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 10 ) * 10,
 				outputIconsNumber = Math.ceil(comparison / outputRatio),
 				outputRatioUnits = '';
 			
@@ -136,6 +138,11 @@ jQuery(function($) {
 			        }
 			    }
 				delay += 0.005;
+			}
+
+			if (outputRatioUnits == 'months') {
+				outputComparisonUnits = 'Years';
+				outputRatioUnits = 'Years';
 			}
 
 			$('#output-ratio').html(outputRatio);
