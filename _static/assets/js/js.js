@@ -93,10 +93,9 @@ jQuery(function($) {
 				if (comparison > 12) {
 					comparison = Math.round(comparison / 12);
 					comparisonString = comparison.toLocaleString();
-					comparisonUnits = 'Years';
+					comparisonUnits = 'years';
 				}
-			}
-			if (comparisonUnits.toLowerCase() == 'days') {
+			} else if (comparisonUnits.toLowerCase() == 'days') {
 				if (comparison > 31) {
 					if (comparison > 365) {
 						comparison = Math.round(comparison / 365);
