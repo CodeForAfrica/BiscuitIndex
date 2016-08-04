@@ -93,7 +93,23 @@ jQuery(function($) {
 				if (comparison > 12) {
 					comparison = Math.round(comparison / 12);
 					comparisonString = comparison.toLocaleString();
-					comparisonUnits = 'Years'
+					comparisonUnits = 'Years';
+				}
+			}
+			if (comparisonUnits.toLowerCase() == 'days') {
+				if (comparison > 31) {
+					if (comparison > 365) {
+						comparison = Math.round(comparison / 365);
+						comparisonString = comparison.toLocaleString();
+						comparisonUnits = 'years';
+					} else {
+						comparison = Math.round(comparison / 30);
+						comparisonString = comparison.toLocaleString();
+						comparisonUnits = 'months';
+					}
+					
+				} else {
+					comparisonUnits = 'days';
 				}
 			}
 			
@@ -140,9 +156,9 @@ jQuery(function($) {
 				delay += 0.005;
 			}
 
-			if (outputRatioUnits == 'months') {
-				outputComparisonUnits = 'Years';
-				outputRatioUnits = 'Years';
+			if (comparisonUnits == 'days' || comparisonUnits == 'months' || comparisonUnits == 'years') {
+				outputComparisonUnits = comparisonUnits;
+				outputRatioUnits = comparisonUnits;
 			}
 
 			$('#output-ratio').html(outputRatio);
