@@ -29,26 +29,6 @@ def counties():
     '''
     index.html
     '''
-    try:
-        mysql = get_mysql()
-        table = mysql[app.config['DATABASE']['logs']]
-        start = datetime.now()
-        saved = table.insert(
-                dict(
-                    request_id = str(uuid.uuid4()),
-                    client = request.environ.get('HTTP_USER_AGENT'),
-                    now=datetime.now(),
-                    args=request.environ.get('QUERY_STRING'),
-                    server=request.environ.get('SERVER_NAME')
-                    )
-                )
-        print "inserted %s in %s seconds" % (
-                saved, (datetime.now()-start).seconds
-                )
-
-    except Exception, err:
-        print "Error: Couldn't get request parameters: %s" % err
-
     counties_list = []
     for each in app.config['COUNTIES']:
         if not each in app.config['NODATA']:
