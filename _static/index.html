@@ -10,7 +10,7 @@
 	<title>Biscuit Index</title>
 	<script src="assets/js/modernizr-2.6.2.min.js"></script>
 	<link rel="stylesheet" href="assets/css/css.css" type="text/css" />
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,300,300italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 	<script>
 		var comparatives = "{{comparatives|safe}}";
@@ -80,13 +80,13 @@
                             <span id="output-comparison">0</span>
                             <span id="output-comparison-units">people</span>
 						</div>
-						<div class="inner">
-							<nav class="controls">
-								<div class="control"><i class="soda"></i><input type="range" id="range-soda" min="0" value="100" max="100" step="1"></div>
-								<div class="control"><i class="coffee"></i><input type="range" id="range-coffee" min="0" value="100" max="100" step="1"></div>
-								<div class="control"><i class="cupcake"></i><input type="range" id="range-cupcake" min="0" value="100" max="100" step="1"></div>
-							</nav>
-						</div>
+						<!--<div class="inner">-->
+							<!--<nav class="controls">-->
+								<!--<div class="control"><i class="mri"></i><input type="range" id="range-mri" min="0" value="100" max="100" step="1"></div>-->
+								<!--<div class="control"><i class="dialysis"></i><input type="range" id="range-dialysis" min="0" value="100" max="100" step="1"></div>-->
+								<!--<div class="control"><i class="malarial"></i><input type="range" id="range-malarial" min="0" value="100" max="100" step="1"></div>-->
+							<!--</nav>-->
+						<!--</div>-->
 					</div>
 				</div>
 				<div class="main-col">
@@ -104,37 +104,37 @@
 						<div class="icon-row">
 							<div class="">
 								<div class="batch-count">
-									<div id="batch-count--soda"></div>
-									<div class="batch-count-name">Bottles</div>
+									<div id="batch-count--mri"></div>
+									<div class="batch-count-name">MRI Machines</div>
 								</div>
-								<div class="icon-container soda-icons"></div>
+								<div class="icon-container mri-icons"></div>
 							</div>
 							<div class="icon-legend">
-								<i class="soda"></i> = <span id="output-soda-ratio">100</span> <span class="output-ratio-units"> 300ml <strong>bottles</strong>
+								<i class="mri"></i> = <span id="output-mri-ratio">100</span> <span class="output-ratio-units"> <strong>MRI</strong> machines</span>
 							</div>
 						</div>
 						<div class="icon-row">
 							<div class="">
 								<div class="batch-count">
-									<div id="batch-count--coffee"></div>
-									<div class="batch-count-name">Cups</div>
+									<div id="batch-count--dialysis"></div>
+									<div class="batch-count-name">Dialysis Machines</div>
 								</div>
-								<div class="icon-container coffee-icons"></div>
+								<div class="icon-container dialysis-icons"></div>
 							</div>
 							<div class="icon-legend">
-								<i class="coffee"></i> = <span id="output-coffee-ratio">100</span> <span class="output-ratio-units"> <strong>cups</strong> of Tea
+								<i class="dialysis"></i> = <span id="output-dialysis-ratio">100</span> <span class="output-ratio-units"> <strong>Dialysis</strong> Machines</span>
 							</div>
 						</div>
 						<div class="icon-row">
 							<div class="">
 								<div class="batch-count">
-									<div id="batch-count--cupcake"></div>
-									<div class="batch-count-name">Loaves</div>
+									<div id="batch-count--malarial"></div>
+									<div class="batch-count-name">Malaria Drugs</div>
 								</div>
-								<div class="icon-container cupcake-icons"></div>
+								<div class="icon-container malarial-icons"></div>
 							</div>
 							<div class="icon-legend">
-								<i class="cupcake"></i> = <span id="output-cupcake-ratio">100</span> <span class="output-ratio-units"> <strong>loaves</strong>
+								<i class="malarial"></i> = <span id="output-malarial-ratio">100</span> <span class="output-ratio-units"> <strong>Malarial</strong> Drugs</span>
 							</div>
 						</div>
 					</div>
