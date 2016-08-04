@@ -64,8 +64,7 @@ body {
 // Prompt
 
 .prompt {
-	background-color: #204d62;
-	background-image: image-url('prompt-bg.jpg');
+	background-color: $cfa-blue;
 	color: #fff;
 	font-size: 23px;
 
@@ -141,9 +140,8 @@ body {
 		font-size: 18px;
 		color: #4d7591;
 		font-weight: 600;
+		background: #fff;
 		box-shadow: 0 0 11px rgba(#000,0.22);
-		background: rgba(#000,0.1);
-		@include border-radius(3px);
 		@include transition(all 0.3s ease);
 		@include background-image(linear-gradient(white, #e5ebef));
 
@@ -233,13 +231,13 @@ body {
 				margin-left: 40%;
 			}
 
-			&.soda:after 	{ content: "SODA"; }
-			&.coffee:after 	{ content: "TEA"; }
-			&.cupcake:after { content: "LOAVES"; }
+			&.mri:after 	{ content: "MRI"; }
+			&.dialysis:after 	{ content: "DIALYSIS "; }
+			&.malarial:after { content: "DRUGS"; }
 
-			&.soda 		{ background-image: image-url('icon-soda-purple.png'); }
-			&.coffee 	{ background-image: image-url('icon-coffee-purple.png'); }
-			&.cupcake 	{ background-image: image-url('icon-cupcake-purple.png'); }
+			&.mri 		{ background-image: image-url('icon-mri-purple.png'); }
+			&.dialysis 	{ background-image: image-url('icon-dialysis-purple.png'); }
+			&.malarial 	{ background-image: image-url('icon-malarial-purple.png'); }
 		}
 
 		input {
@@ -367,18 +365,18 @@ body {
 		.preload & { opacity: 0; }
 
 		&.house 	{ background-image: image-url('icon-house.png'); }
-		&.soda 		{ background-image: image-url('icon-soda.png'); }
-		&.coffee 	{ background-image: image-url('icon-coffee.png'); }
-		&.cupcake 	{ background-image: image-url('icon-cupcake.png'); }
+		&.mri 		{ background-image: image-url('icon-mri.png'); }
+		&.dialysis 	{ background-image: image-url('icon-dialysis.png'); }
+		&.malarial 	{ background-image: image-url('icon-malarial.png'); }
 		&.fee 	{ background-image: image-url('icon-fee.png'); }
 		&.commute 	{ background-image: image-url('icon-commute.png'); }
 		&.maize 	{ background-image: image-url('icon-maize.png'); }
 		&.dialysis 	{ background-image: image-url('icon-dialysis.png'); }
 	}
 
-	#output-soda-ratio,
-	#output-coffee-ratio,
-	#output-cupcake-ratio {
+	#output-mri-ratio,
+	#output-dialysis-ratio,
+	#output-malarial-ratio {
 		font-weight: 700;
 	}
 
@@ -386,17 +384,19 @@ body {
 .main-col { @include flex(1); }
 
 .news-box {
-    width:25%;
+    width:23%;
     display: inline-block;
     float:left;
+    padding: 0px 10px;
 }
 .news-box span {
     display:block;
-    background-color:#4d7591;
-    padding:0px 5px;
+    background-color:$cfa-blue;
+    padding:10px 15px;
     color:#fff;
     font-size:12px;
-    width:60px;
+    width:33px;
+    margin-top: 10px;
 }
 .news-box a {
     color:#333;
@@ -404,6 +404,10 @@ body {
 .news-box a:hover {
     color:$blue-primary;
     cursor:pointer;
+}
+.news-box small {
+    font-weight:100;
+    font-size:18px;
 }
 .news-section {
     background: #fff;
@@ -417,12 +421,11 @@ body {
     margin-bottom: 10px;
 }
 
-
 // Footer
 
 .bottom {
-	background: #81c0de;
-	color: rgba(#fff,0.9);
+	background: $cfa-blue;
+	color: #fff;
 	font-size: 19px;
 
 	.wrap { padding: 52px 0 62px; }
@@ -439,7 +442,8 @@ body {
 	}
 
 	a {
-		color: #4d7591;
+		color: #fff;
+		font-weight:bold;
 		@include transition(all 0.3s ease);
 
 		&:hover {

@@ -91,6 +91,21 @@ def data():
     else:
         return jsonify(resp)
 
+@app.route('/how-mcas-mandazi-addiction-is-killing-kenyas-poorest')
+def story():
+    return render_template('story.html')\
+
+@app.route('/from-loan-to-mouth')
+def story2():
+    return render_template('story2.html')
+
+@app.route('/feeding-frenzy-as-counties-spend-millions-on-hospitality')
+def story3():
+    return render_template('story3.html')\
+
+@app.route('/mcas-spend-billions-on-foreign-trips')
+def story4():
+    return render_template('story4.html')
 
 manager = Manager(app)
 
