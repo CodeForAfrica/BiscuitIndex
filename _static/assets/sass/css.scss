@@ -415,7 +415,6 @@ body {
     margin-bottom: 10px;
 }
 
-
 // Footer
 
 .bottom {
@@ -437,7 +436,8 @@ body {
 	}
 
 	a {
-		color: #4d7591;
+		color: #fff;
+		font-weight:bold;
 		@include transition(all 0.3s ease);
 
 		&:hover {
