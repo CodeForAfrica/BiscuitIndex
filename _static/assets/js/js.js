@@ -71,7 +71,9 @@ jQuery(function($) {
 				categoryDescription,
 				comparison,
 				comparisonString,
-				comparisonUnits;
+				comparisonUnits,
+				ComparisonMultiple,
+				rep;//How many items does one icon represent
 
 			// set human-readable labels
 			comparatives = JSON.parse(comparatives.replace(/'/g, '"').replace(/None/g, '"None"'));
@@ -80,6 +82,8 @@ jQuery(function($) {
 			        categoryName = comparatives[k].name;
 			        categoryDescription = comparatives[k].description;
 			        comparisonUnits = comparatives[k].comparative_unit;
+			        ComparisonMultiple = comparatives[k].comparison_multiple;
+			        rep = comparatives[k].rep;
 			        break;
 			    }
 			}
@@ -91,8 +95,7 @@ jQuery(function($) {
 
 
 			// calculate comparison value
-			comparison = countyBudgetInteger / urlExp;
-			comparison = Math.round(comparison);
+			comparison = parseInt((countyBudgetInteger / urlExp) * ComparisonMultiple);
 			comparisonString = comparison.toLocaleString();
 			
 			// print it
@@ -104,11 +107,11 @@ jQuery(function($) {
 
 			// approximate number of icons we want
 
-			var iconMax = 80, // default
-				iconSodaMax = 40, // specific to soda
+			var iconMax = 80
+			    iconSodaMax = 40, // specific to soda
 				iconCoffeeMax = 35, // specific to coffee
 				iconCupcakeMax = 45, // specific to cupcakes
-				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
+				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / rep ) * rep,
 				outputIconsNumber = Math.ceil(comparison / outputRatio),
 				outputRatioUnits = '';
 			
