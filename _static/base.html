@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0">
+	<title>Biscuit Index</title>
+	<script src="assets/js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="assets/css/css.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,300,300italic' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<script>
+		var comparatives = "{{comparatives|safe}}";
+	</script>
+</head>
+
+<body class="home preload">
+    <!-- fb share button js -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<header class="top">
+		<div class="wrap clearfix">
+			<a href="/" class="logo">&nbsp;</a>
+			<div class="social-sharing">
+				<!-- place social buttons here -->
+				<a href="" id="twtbtn" class="twitter-hashtag-button" data-size="large" data-url="http://biscuitindex.codeforkenya.org">Tweet #BiscuitIndex</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<div class="fb-share-button" data-href="http://biscuitindex.codeforkenya.org/" data-layout="button" data-size="large" data-mobile-iframe="true" style="line-height:15px;"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbiscuitindex.codeforkenya.org%2F&amp;src=sdkpreparse">Share</a></div>
+			</div>
+		</div>
+	</header><!--/ top -->
+    {% block content %}
+    {% endblock %}
+
+	<footer class="bottom">
+		<div class="wrap">
+			<div class="info clearfix">
+				<div class="two-thirds left">
+					<div class="inner">
+						<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="nofollow">Creative Commons Attribution-ShareAlike 4.0 International License</a></p>
+						<br>
+						<p>  <a href="/data.json" target="_blank">Export the raw data</a> behind this site.</p>
+					</div>
+				</div>
+				<div class="third right txt-right">
+					<a href="https://codeforkenya.org/" class="footer-logo cfk"></a>
+					<a href="https://www.hivos.org/" class="footer-logo hivos"></a>
+				</div>
+			</div>
+		</div>
+	</footer><!--/ bottom -->
+</body>
+</html>
