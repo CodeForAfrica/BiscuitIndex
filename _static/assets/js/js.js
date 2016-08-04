@@ -19,9 +19,9 @@ jQuery(function($) {
 			urlCat 			= '' + getUrlParameter('cat'),
 			urlExp 			= parseInt(getUrlParameter('exp')),
 			urlCounty 		= '' + getUrlParameter('county');
-			urlSoda 		= '' + getUrlParameter('sd');
-			urlCoffee 		= '' + getUrlParameter('cf');
-			urlCupcake 		= '' + getUrlParameter('cc');
+			urlmri 		= '' + getUrlParameter('sd');
+			urldialysis 		= '' + getUrlParameter('cf');
+			urlmalarial 		= '' + getUrlParameter('cc');
 
 		function baseFx() {
 
@@ -30,9 +30,9 @@ jQuery(function($) {
 			$('#expenditure').val(urlExp).focus();
 			$('#category').val(urlCat);
 			$('#county').val(urlCounty);
-			$('#range-soda').val(urlSoda);
-			$('#range-coffee').val(urlCoffee);
-			$('#range-cupcake').val(urlCupcake);
+			$('#range-mri').val(urlmri);
+			$('#range-dialysis').val(urldialysis);
+			$('#range-malarial').val(urlmalarial);
 
 
 			// only show output if essential
@@ -71,9 +71,7 @@ jQuery(function($) {
 				categoryDescription,
 				comparison,
 				comparisonString,
-				comparisonUnits,
-				ComparisonMultiple,
-				rep;//How many items does one icon represent
+				comparisonUnits;
 
 			// set human-readable labels
 			comparatives = JSON.parse(comparatives.replace(/'/g, '"').replace(/None/g, '"None"'));
@@ -82,8 +80,6 @@ jQuery(function($) {
 			        categoryName = comparatives[k].name;
 			        categoryDescription = comparatives[k].description;
 			        comparisonUnits = comparatives[k].comparative_unit;
-			        ComparisonMultiple = comparatives[k].comparison_multiple;
-			        rep = comparatives[k].rep;
 			        break;
 			    }
 			}
@@ -95,7 +91,7 @@ jQuery(function($) {
 
 
 			// calculate comparison value
-			comparison = parseInt((countyBudgetInteger / urlExp) * ComparisonMultiple);
+			comparison = parseInt(countyBudgetInteger / urlExp);
 			comparisonString = comparison.toLocaleString();
 			
 			// print it
@@ -108,10 +104,10 @@ jQuery(function($) {
 			// approximate number of icons we want
 
 			var iconMax = 80
-			    iconSodaMax = 40, // specific to soda
-				iconCoffeeMax = 35, // specific to coffee
-				iconCupcakeMax = 45, // specific to cupcakes
-				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / rep ) * rep,
+			    iconmriMax = 30, // specific to mri
+				icondialysisMax = 30, // specific to dialysis
+				iconmalarialMax = 40, // specific to malarials
+				outputRatio = Math.ceil( (parseInt(comparison) / iconMax) / 100 ) * 100,
 				outputIconsNumber = Math.ceil(comparison / outputRatio),
 				outputRatioUnits = '';
 			
@@ -121,9 +117,9 @@ jQuery(function($) {
 			var mainOutputString = '',
 				outputComparisonUnits = '',
 				outputRatioUnits = '',
-				sodaString = '',
-				coffeeString = '',
-				cupcakeString = '',
+				mriString = '',
+				dialysisString = '',
+				malarialString = '',
 				delay = 0.005; 	// animation interval for icons,
 								// ndio zisiingie zote tu pap!
 
@@ -148,62 +144,64 @@ jQuery(function($) {
 
 			// secondary outputs
 
-			var thirdCountyBudgetInteger = Math.round(countyBudgetInteger / 3),
-				sodaPrice = 30,
-				coffeePrice = 200,
-				cupcakePrice = 15,
+			var thirdCountyBudgetInteger = Math.round(countyBudgetInteger),
+				mriPrice = 150000000,
+				dialysisPrice = 3000000,
+				malarialPrice = 15,
 
-				sodaCount = Math.round(thirdCountyBudgetInteger / sodaPrice),
-				coffeeCount = Math.round(thirdCountyBudgetInteger / coffeePrice),
-				cupcakeCount = Math.round(thirdCountyBudgetInteger / cupcakePrice),
+				mriCount = Math.round(thirdCountyBudgetInteger / mriPrice),
+				dialysisCount = Math.round(thirdCountyBudgetInteger / dialysisPrice),
+				malarialCount = Math.round(thirdCountyBudgetInteger / malarialPrice),
 
-				sodaRatio = Math.ceil( (parseInt(sodaCount) / iconSodaMax) / 1000 ) * 1000,
-				sodaIconsNumber = Math.round(sodaCount / sodaRatio),
+				mriRatio = Math.ceil( (parseInt(mriCount) / iconmriMax) / 1 ) * 1,
+				mriIconsNumber = Math.ceil(mriCount / mriRatio),
 
-				coffeeRatio = Math.ceil( (parseInt(coffeeCount) / iconCoffeeMax) / 1000 ) * 1000,
-				coffeeIconsNumber = Math.round(coffeeCount / coffeeRatio),
+				dialysisRatio = Math.ceil( (parseInt(dialysisCount) / icondialysisMax) / 10 ) * 10,
+				dialysisIconsNumber = Math.ceil(dialysisCount / dialysisRatio),
 
-				cupcakeRatio = Math.ceil( (parseInt(cupcakeCount) / iconCupcakeMax) / 1000 ) * 1000,
-				cupcakeIconsNumber = Math.round(cupcakeCount / cupcakeRatio);
+				malarialRatio = Math.ceil( (parseInt(malarialCount) / iconmalarialMax) / 1000 ) * 1000,
+				malarialIconsNumber = Math.ceil(malarialCount / malarialRatio);
+				console.log(thirdCountyBudgetInteger);
+				console.log(dialysisRatio);
+				console.log(dialysisCount);
 
-				$('#output-soda-ratio').html(sodaRatio.toLocaleString());
-				$('#output-coffee-ratio').html(coffeeRatio.toLocaleString());
-				$('#output-cupcake-ratio').html(cupcakeRatio.toLocaleString());
+				$('#output-mri-ratio').html(mriRatio.toLocaleString());
+				$('#output-dialysis-ratio').html(dialysisRatio.toLocaleString());
+				$('#output-malarial-ratio').html(malarialRatio.toLocaleString());
 
-				$('#batch-count--soda').html(Math.round(sodaCount / 30).toLocaleString()); // 30 sodas in a crate
-				$('#batch-count--coffee').html('<em>+</em>' + Math.round(coffeeCount * 0.2).toLocaleString()); // 5 cups per litre
-				$('#batch-count--cupcake').html('<em>+</em>' + Math.round(cupcakeCount / 6).toLocaleString()); // 6 cupcakes in a packet
-
+				$('#batch-count--mri').html(Math.ceil(mriCount).toLocaleString());
+				$('#batch-count--dialysis').html(Math.ceil(dialysisCount).toLocaleString());
+				$('#batch-count--malarial').html(Math.ceil(malarialCount).toLocaleString());
 
 			delay = 0;
 
-			// soda loop
-			for (var i = 0; i < sodaIconsNumber; i++) {
-				sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * sodaRatio).toLocaleString() + '"></i> ';
+			// mri loop
+			for (var i = 0; i < mriIconsNumber; i++) {
+				mriString += '<i class="mri" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * mriRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
 			delay = 0;
 
-			// coffee loop
-			for (var i = 0; i < coffeeIconsNumber; i++) {
-				coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * coffeeRatio).toLocaleString() + '"></i> ';
+			// dialysis loop
+			for (var i = 0; i < dialysisIconsNumber; i++) {
+				dialysisString += '<i class="dialysis" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * dialysisRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
 			delay = 0;
 
-			// cupcake loop
-			for (var i = 0; i < cupcakeIconsNumber; i++) {
-				cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * cupcakeRatio).toLocaleString() + '"></i> ';
+			// malarial loop
+			for (var i = 0; i < malarialIconsNumber; i++) {
+				malarialString += '<i class="malarial" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * malarialRatio).toLocaleString() + '"></i> ';
 				delay += 0.005;
 			}
 
 			// insert into DOM
 			$('.output-icons').html(mainOutputString);
-			$('.soda-icons').html(sodaString);
-			$('.coffee-icons').html(coffeeString);
-			$('.cupcake-icons').html(cupcakeString);
+			$('.mri-icons').html(mriString);
+			$('.dialysis-icons').html(dialysisString);
+			$('.malarial-icons').html(malarialString);
 
 			gridSet('.dynamic-chart', '.icon-container');
 
@@ -212,54 +210,54 @@ jQuery(function($) {
 
 			$('input[type="range"]').on('change', function(e) {
 
-				var soda = parseInt($('#range-soda').val()),
-					coffee = parseInt($('#range-coffee').val()), 
-					cupcake = parseInt($('#range-cupcake').val());
+				var mri = parseInt($('#range-mri').val()),
+					dialysis = parseInt($('#range-dialysis').val()), 
+					malarial = parseInt($('#range-malarial').val());
 
-				var total = soda + coffee + cupcake;
+				var total = mri + dialysis + malarial;
 
 				// number of items equals -> countyBudgetInteger multiplied by the ratio of item to the rest,
 				// (according to current set state of sliders), then divided by the cost of a single item
 				
-				sodaCount = Math.round((countyBudgetInteger * ( soda / total)) / sodaPrice);
-				coffeeCount = Math.round((countyBudgetInteger * ( coffee / total)) / coffeePrice);
-				cupcakeCount = Math.round((countyBudgetInteger * ( cupcake / total)) / cupcakePrice);
+				mriCount = Math.round((countyBudgetInteger * ( mri / total)) / mriPrice);
+				dialysisCount = Math.round((countyBudgetInteger * ( dialysis / total)) / dialysisPrice);
+				malarialCount = Math.round((countyBudgetInteger * ( malarial / total)) / malarialPrice);
 
 				// get number of icons to display according to initially computed ratios
-				sodaIconsNumber = Math.round(sodaCount / sodaRatio);
-				coffeeIconsNumber = Math.round(coffeeCount / coffeeRatio);
-				cupcakeIconsNumber = Math.round(cupcakeCount / cupcakeRatio);
+				mriIconsNumber = Math.round(mriCount / mriRatio);
+				dialysisIconsNumber = Math.round(dialysisCount / dialysisRatio);
+				malarialIconsNumber = Math.round(malarialCount / malarialRatio);
 
 				// reset (otherwise icons would increment ad infinitum)
-				sodaString = coffeeString = cupcakeString = '';
+				mriString = dialysisString = malarialString = '';
 
-				// soda loop, generate markup
-				for (var i = 0; i < sodaIconsNumber; i++) {
-					sodaString += '<i class="soda" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * sodaRatio).toLocaleString() + '"></i> ';
+				// mri loop, generate markup
+				for (var i = 0; i < mriIconsNumber; i++) {
+					mriString += '<i class="mri" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * mriRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
-				// coffee loop
-				for (var i = 0; i < coffeeIconsNumber; i++) {
-					coffeeString += '<i class="coffee" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * coffeeRatio).toLocaleString() + '"></i> ';
+				// dialysis loop
+				for (var i = 0; i < dialysisIconsNumber; i++) {
+					dialysisString += '<i class="dialysis" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * dialysisRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
-				// cupcake loop
-				for (var i = 0; i < cupcakeIconsNumber; i++) {
-					cupcakeString += '<i class="cupcake" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * cupcakeRatio).toLocaleString() + '"></i> ';
+				// malarial loop
+				for (var i = 0; i < malarialIconsNumber; i++) {
+					malarialString += '<i class="malarial" style="transition-delay:' + delay.toFixed(2) + 's" title="' + ((i + 1) * malarialRatio).toLocaleString() + '"></i> ';
 					delay += 0.005;
 				}
 
 				// inject that shtuff, man!
-				$('.soda-icons').html(sodaString);
-				$('.coffee-icons').html(coffeeString);
-				$('.cupcake-icons').html(cupcakeString);
+				$('.mri-icons').html(mriString);
+				$('.dialysis-icons').html(dialysisString);
+				$('.malarial-icons').html(malarialString);
 
 				// pima pima, basic stuff
-				$('#batch-count--soda').html(sodaCount.toLocaleString()); // 30 sodas in a crate
-				$('#batch-count--coffee').html('<em>+</em>' + coffeeCount.toLocaleString()); // 5 cups per litre
-				$('#batch-count--cupcake').html('<em>+</em>' + cupcakeCount.toLocaleString()); // 6 cupcakes in a packet
+				$('#batch-count--mri').html(mriCount.toLocaleString()); // 30 mris in a crate
+				$('#batch-count--dialysis').html('<em>+</em>' + dialysisCount.toLocaleString()); // 5 cups per litre
+				$('#batch-count--malarial').html('<em>+</em>' + malarialCount.toLocaleString()); // 6 malarials in a packet
 
 				// update URI without reload
 				if (history.pushState) {
@@ -272,9 +270,9 @@ jQuery(function($) {
 								+ '?cat=' + category 
 								+ '&exp=' + expenditure 
 								+ '&county=' + county
-								+ '&sd=' + soda
-								+ '&cf=' + coffee
-								+ '&cc=' + cupcake;
+								+ '&sd=' + mri
+								+ '&cf=' + dialysis
+								+ '&cc=' + malarial;
 					window.history.pushState({path:newUrl},'',newUrl);
 				}
 

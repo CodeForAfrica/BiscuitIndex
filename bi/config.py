@@ -43,17 +43,13 @@ COMPARATIVES = dict(
             amount=124,
             description="is enough to buy",
             comparative_unit="packets of maize flour",
-            rep=100, #What does 1 icon represent?
-            comparison_multiple = 1
             ),
         house=dict(
             name="Monthly house rent",
             mutable="true",
             amount=None,
             description="can pay your rent for",
-            comparative_unit="years",
-            rep=100,#What does 1 icon represent?
-            comparison_multiple = 0.08333
+            comparative_unit="months",
             ),
         commute=dict(
             name="Daily commutes",
@@ -61,8 +57,6 @@ COMPARATIVES = dict(
             amount=None,
             description="equals your spending on commuting for",
             comparative_unit="days",
-            rep=100,#What does 1 icon represent?
-            comparison_multiple = 1
             ),
         fee=dict(
             name="School fees per term",
@@ -70,8 +64,6 @@ COMPARATIVES = dict(
             amount=None,
             description="is enough to pay your term school fees for",
             comparative_unit="students",
-            rep=100,#What does 1 icon represent?
-            comparison_multiple=1
             ),
         dialysis=dict(
             name="Dialysis machine",
@@ -79,7 +71,5 @@ COMPARATIVES = dict(
             amount=3000000,
             description="is enough to purchase",
             comparative_unit="dialysis machines",
-            rep=5,#What does 1 icon represent?
-            comparison_multiple = 1
             ),
         )
