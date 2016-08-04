@@ -89,28 +89,30 @@ jQuery(function($) {
 			comparisonString = comparison.toLocaleString();
 
 			// Structure the months more favourably
-			if (comparisonUnits.toLowerCase() == 'months') {
-				if (comparison > 12) {
-					comparison = Math.round(comparison / 12);
-					comparisonString = comparison.toLocaleString();
-					comparisonUnits = 'years';
-				}
-			} else if (comparisonUnits.toLowerCase() == 'days') {
-				if (comparison > 31) {
-					if (comparison > 365) {
-						comparison = Math.round(comparison / 365);
-						comparisonString = comparison.toLocaleString();
-						comparisonUnits = 'years';
-					} else {
-						comparison = Math.round(comparison / 30);
-						comparisonString = comparison.toLocaleString();
-						comparisonUnits = 'months';
-					}
-					
-				} else {
-					comparisonUnits = 'days';
-				}
-			}
+			if (comparisonUnits) {
+                if (comparisonUnits.toLowerCase() == 'months') {
+                    if (comparison > 12) {
+                        comparison = Math.round(comparison / 12);
+                        comparisonString = comparison.toLocaleString();
+                        comparisonUnits = 'years';
+                    }
+                } else if (comparisonUnits.toLowerCase() == 'days') {
+                    if (comparison > 31) {
+                        if (comparison > 365) {
+                            comparison = Math.round(comparison / 365);
+                            comparisonString = comparison.toLocaleString();
+                            comparisonUnits = 'years';
+                        } else {
+                            comparison = Math.round(comparison / 30);
+                            comparisonString = comparison.toLocaleString();
+                            comparisonUnits = 'months';
+                        }
+
+                    } else {
+                        comparisonUnits = 'days';
+                    }
+                }
+            }
 			
 			// print it
 			$('#output-comparison').html(comparisonString);
