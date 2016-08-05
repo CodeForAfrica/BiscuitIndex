@@ -35,7 +35,6 @@ body {
 	position: relative;
 }
 
-
 // Masthead
 
 .top {
@@ -443,13 +442,25 @@ body {
 
 	a {
 		color: #fff;
-		font-weight:bold;
+		text-decoration:underline;
 		@include transition(all 0.3s ease);
 
 		&:hover {
 			border-bottom: 1px dotted;
 		}
 	}
+	ul {
+	    padding-top: 10px;
+        list-style-type: square;
+	}
+	small {
+        font-weight:100;
+        font-size: 85%;
+    }
+    li  a{
+        font-weight:100;
+        font-size: 85%;
+    }
 
 	.footer-logo {
 		display: inline-block;
@@ -462,12 +473,12 @@ body {
 
 		&.cfk {
 			width: 182px;
-			background: image-url('logo-cfk.png') no-repeat;
+			background: image-url('cfkenya_blue.png') no-repeat;
 		}
 		&.hivos {
 			margin-left: 50px;
 			width: 140px;
-			background: image-url('logo-hivos.png') no-repeat;
+			background: image-url('hivos.png') no-repeat;
 		}
 	}
 }
@@ -517,6 +528,8 @@ body {
 	    width:25%;
 	    float:left;
 	}
+	.bottom .third { float: left; width: 33%; }
+	.bottom .half { float: left; width: 49%; }
 
 }
 
@@ -528,6 +541,8 @@ body {
 	    width:25%;
 	    float:left;
 	}
+	.bottom .third { float: left; width: 33%; }
+	.bottom .half { float: left; width: 49%; }
 
 
 }
@@ -549,6 +564,7 @@ body {
 	.bottom .two-thirds { margin-bottom: 20px; }
 	.bottom .two-thirds,
 	.bottom .third { float: none; width: 100%; }
+	.bottom .half { float: none; width: 100%; }
 
 	.icon-container,
 	.icon-legend { padding-left: 0; padding-right: 0; }
@@ -559,11 +575,23 @@ body {
 
 }
 
-
-
-/* ------------------------------------------------
-03 Animation
---------------------------------------------------- */
-
+.story-cover {
+    .wrap {
+        padding: 60px 0 14px;
+        width:60%;
+    }
+    #title {
+        font-size:42px;
+    }
+    small {
+        font-size:18px;
+    }
+}
+.story-content {
+    padding:20px 0px;
+    .wrap {
+        width:60%;
+    }
+}
 
 
