@@ -104,8 +104,8 @@ sub {
 
 /* Selection */
 
-::-moz-selection 	{ background: $highlight-bg; color:#000; }
-::selection 		{ background: $highlight-bg; color:#000; }
+// ::-moz-selection 	{ background: $highlight-bg; color:#000; }
+// ::selection 		{ background: $highlight-bg; color:#000; }
 .no-touch input		{ outline: none; }
 
 
