@@ -13,7 +13,9 @@ Author URI: http://skylinedesign.co.ke
 @import "fonts";
 @import "utilities";
 
-
+$blue: #0D68A8;
+$lightblue: #5394C1;
+$red: #ED1C24;
 
 /* ------------------------------------------------
 01 Layout
@@ -28,7 +30,7 @@ body {
 	padding-top: 88px;
 }
 
- .wrap {
+.wrap {
 	width: 1280px;
 	margin: 0 auto;
 	text-align: left;
