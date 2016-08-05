@@ -81,3 +81,6 @@ Thumbs.db
 
 # Sublime
 _static/assets/sublime
+
+# other stuff
+_static/.sass-cache/
