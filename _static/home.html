@@ -1,5 +1,82 @@
 {% extends 'layout/base.html' %}
 {% block content %}
-Yolo
+<section class="container intro">
+  <div class="row">
+    <div class="col-sm-4 col-md-3 intro-text">
+      <p>Do you know how much money your county spends on "tea and biscuits", i.e. hospitality?</p>
+
+      <p>Find out exactly how much and compare it not just to similar items that the same amount would buy, but also to other ways the money could be better used →</p>
+    </div>
+    <div class="col-sm-8 col-md-9 form-inline">
+      <div class="lead">
+        How much do you spend on
+        <div class="form-group">
+          <select name="category" id="category" class="form-control">
+            {% for comparative in comparatives %}
+              <option value="{{ comparative }}" data-type="{{ comparatives[comparative]['mutable'] }}" data-amount="{{ comparatives[comparative]['amount'] }}">{{ comparatives[comparative]['name'] }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        ?
+        <div class="form-group">
+          <input type="number" name="expenditure" id="expenditure" placeholder="0" class="fx-fast form-control">
+        </div>
+        <span class="currency">KES</span>
+      </div>
+
+      <div class="lead">
+        Compare this to
+        <div class="form-group">
+          <select name="county" id="county" class="form-control">
+            {% for county in counties %}
+              <option value="{{county}}">{{county}}</option>
+            {%endfor%}
+          </select>
+        </div>
+        County’s expenditure on <em>&ldquo;tea and biscuits&rdquo;.</em>
+      </div>
+
+      <p class="lead">
+        <a href="" id="compare" class="compare fx btn btn-lg btn-default">SUBMIT</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="container">
+    <h3 class="page-header">Featured Stories</h3>
+    <div class="row">
+      <div class="col-sm-3">
+        <h4>
+          <a href="/how-mcas-mandazi-addiction-is-killing-kenyas-poorest">How MCAs mandazi Addiction Is Killing Kenya's Poorest</a>
+        </h5>
+        <p>Kenya only has only eight fully equipped MRI facilities where you can get radiation treatment for cancer— one in each of ... </p>
+        <p><a class="btn btn-sm btn-primary" href="/how-mcas-mandazi-addiction-is-killing-kenyas-poorest">READ MORE</a></p>
+      </div>
+      <div class="col-sm-3">
+        <h4>
+          <a href="/from-loan-to-mouth">From loan to mouth: Kenya’s debt economy</a>
+        </h5>
+        <p>Kenyans have over the years continued to consume more than they have and saving little.</p>
+        <p><a class="btn btn-sm btn-primary" href="/from-loan-to-mouth">READ MORE</a></p>
+      </div>
+      <div class="col-sm-3">
+        <h4>
+          <a href="/feeding-frenzy-as-counties-spend-millions-on-hospitality">Feeding frenzy as counties spend millions on ‘hospitality’</a>
+        </h5>
+        <p>Do you know how much your county has been spending on tea, mandazi, samosas and hot lunches for your MCAs and governors?</p>
+        <p><a class="btn btn-sm btn-primary" href="/feeding-frenzy-as-counties-spend-millions-on-hospitality">READ MORE</a></p>
+      </div>
+      <div class="col-sm-3">
+        <h4>
+          <a href="/mcas-spend-billions-on-foreign-trips">MCAs spend billions on foreign trips</a>
+        </h5>
+        <p>The race seems to be on to get as many frequent flyer miles as county assembly members and governors continue ...</p>
+        <p><a class="btn btn-sm btn-primary" href="/mcas-spend-billions-on-foreign-trips">READ MORE</a></p>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
