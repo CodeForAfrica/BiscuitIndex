@@ -27,14 +27,14 @@ def get_mysql():
 @app.route('/')
 def counties():
     '''
-    index.html
+    home.html
     '''
     counties_list = []
     for each in app.config['COUNTIES']:
         if not each in app.config['NODATA']:
             counties_list.append(each)
     if not request.args:
-        return render_template('index.html', counties=counties_list, comparatives=app.config['COMPARATIVES'])
+        return render_template('home.html', counties=counties_list, comparatives=app.config['COMPARATIVES'])
     args = request.args.copy()
     county = args['county']
     db = get_db()
@@ -50,7 +50,7 @@ def counties():
             biscuit = "%s000000" % int(float(x))
 
     #print county, biscuit, biscuit_budget_str
-    return render_template('index.html',
+    return render_template('home.html',
                            biscuit_budget=int(biscuit),
                            biscuit_budget_str=biscuit_budget_str,
                            counties=counties_list,

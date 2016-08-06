@@ -388,7 +388,7 @@ body {
 .main-col { @include flex(1); }
 
 .news-box {
-    width:23%;
+    width:22%;
     display: inline-block;
     float:left;
     padding: 0px 10px;
@@ -530,7 +530,7 @@ body {
 
 	.wrap { width: 94%; }
 	.news-box {
-	    width:25%;
+	    width:22%;
 	    float:left;
 	}
 	.bottom .third { float: left; width: 33%; }
@@ -543,7 +543,7 @@ body {
 	.flex .batch-count { text-align: left; padding-left: 50px; }
 	.icon-row .flex { display: block; }
 	.news-box {
-	    width:25%;
+	    width:22%;
 	    float:left;
 	}
 	.bottom .third { float: left; width: 33%; }
