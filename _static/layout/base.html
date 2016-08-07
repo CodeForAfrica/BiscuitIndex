@@ -28,6 +28,17 @@
 
         <!-- Add your site or application content here -->
 
+        <!-- fb share button js -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +49,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">
+              <a class="navbar-brand" href="/">
                 <img alt="Brand" src="/assets/img/logo.png">
               </a>
             </div>
@@ -46,8 +57,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="" id="twtbtn" class="twitter-hashtag-button" data-size="large" data-url="http://biscuitindex.codeforkenya.org">Tweet #BiscuitIndex</a></li> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <li><div class="fb-share-button" data-href="http://biscuitindex.codeforkenya.org/" data-layout="button" data-size="large" data-mobile-iframe="true" style="line-height:15px;"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbiscuitindex.codeforkenya.org%2F&amp;src=sdkpreparse">Share</a></div></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container -->
@@ -91,9 +102,11 @@
         <script src="/assets/js/vendor/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="/assets/js/plugins.js"></script>
-        <script src="/assets/js/main.js"></script>
 
         <script src="/assets/js/bootstrap.min.js"></script>
+
+        {% block javascript %}
+        {% endblock %}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

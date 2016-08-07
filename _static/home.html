@@ -2,11 +2,14 @@
 {% block content %}
 <section class="container intro">
   <div class="row">
+    <div class="col-sm-12 hidden-xs" style="height:50px;"></div>
+    <div class="col-sm-12 visible-xs" style="height:20px;"></div>
     <div class="col-sm-4 col-md-3 intro-text">
       <p>Do you know how much money your county spends on "tea and biscuits", i.e. hospitality?</p>
 
       <p>Find out exactly how much and compare it not just to similar items that the same amount would buy, but also to other ways the money could be better used →</p>
     </div>
+    <div class="col-sm-12 visible-xs" style="height:40px;"></div>
     <div class="col-sm-8 col-md-9 form-inline">
       <div class="lead">
         How much do you spend on
@@ -40,8 +43,87 @@
         <a href="" id="compare" class="compare fx btn btn-lg btn-default">SUBMIT</a>
       </p>
     </div>
-  </div>
+    <div class="col-sm-12" style="height:70px;"></div>
+  </div> <!-- /.row -->
 </section>
+
+
+<section class="output">
+
+  <div class="container static">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="side-col">
+          <div class="static-nav">
+            <div class="inner">
+              <span id="output-county">Nairobi</span> County's budget allocation on hospitality<br/>
+              <span id="output-budget">0</span><br/>
+              <span id="output-category">equals your Monthly Rentfor approximately</span><br/>
+              <span id="output-comparison">0</span>
+              <span id="output-comparison-units">people</span>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /.col-sm-3 -->
+      <div class="col-sm-9">
+        <div class="main-col">
+
+          <div class="static-chart">
+            <div class="icon-container output-icons">
+              <i class="house"></i>
+            </div>
+            <div class="icon-legend">
+              <i class="house"></i> = <span id="output-ratio">100</span> <span id="output-ratio-units">homes</span>             
+            </div>
+          </div> <!-- /.static-chart -->
+
+          <div class="dynamic-chart">
+            <div class="mid-desc">More info here...</div>
+            <div class="icon-row">
+              <div class="">
+                <div class="batch-count">
+                  <div id="batch-count--mri"></div>
+                  <div class="batch-count-name">MRI Machines</div>
+                </div>
+                <div class="icon-container mri-icons"></div>
+              </div>
+              <div class="icon-legend">
+                <i class="mri"></i> = <span id="output-mri-ratio">100</span> <span class="output-ratio-units"> <strong>MRI</strong> machines</span>
+              </div>
+            </div>
+            <div class="icon-row">
+              <div class="">
+                <div class="batch-count">
+                  <div id="batch-count--dialysis"></div>
+                  <div class="batch-count-name">Dialysis Machines</div>
+                </div>
+                <div class="icon-container dialysis-icons"></div>
+              </div>
+              <div class="icon-legend">
+                <i class="dialysis"></i> = <span id="output-dialysis-ratio">100</span> <span class="output-ratio-units"> <strong>Dialysis</strong> Machines</span>
+              </div>
+            </div>
+            <div class="icon-row">
+              <div class="">
+                <div class="batch-count">
+                  <div id="batch-count--malarial"></div>
+                  <div class="batch-count-name">Malaria Drugs</div>
+                </div>
+                <div class="icon-container malarial-icons"></div>
+              </div>
+              <div class="icon-legend">
+                <i class="malarial"></i> = <span id="output-malarial-ratio">100</span> <span class="output-ratio-units"> <strong>Malaria</strong> Drugs</span>
+              </div>
+            </div>
+          </div> <!-- /.dynamic-chart -->
+        </div> <!-- /.main-col -->
+
+      </div> <!-- /.col-sm-9 -->
+    </div>
+  </div><!--/ static -->
+
+</section><!--/ output -->
+
 
 <section class="stories">
   <div class="container">
@@ -54,6 +136,7 @@
         <p>Kenya only has only eight fully equipped MRI facilities where you can get radiation treatment for cancer— one in each of ... </p>
         <p><a class="btn btn-sm btn-primary" href="/how-mcas-mandazi-addiction-is-killing-kenyas-poorest">READ MORE</a></p>
       </div>
+      <div class="col-sm-12 visible-xs" style="height:20px;"></div>
       <div class="col-sm-3">
         <h4>
           <a href="/from-loan-to-mouth">From loan to mouth: Kenya’s debt economy</a>
@@ -61,6 +144,7 @@
         <p>Kenyans have over the years continued to consume more than they have and saving little.</p>
         <p><a class="btn btn-sm btn-primary" href="/from-loan-to-mouth">READ MORE</a></p>
       </div>
+      <div class="col-sm-12 visible-xs" style="height:20px;"></div>
       <div class="col-sm-3">
         <h4>
           <a href="/feeding-frenzy-as-counties-spend-millions-on-hospitality">Feeding frenzy as counties spend millions on ‘hospitality’</a>
@@ -68,6 +152,7 @@
         <p>Do you know how much your county has been spending on tea, mandazi, samosas and hot lunches for your MCAs and governors?</p>
         <p><a class="btn btn-sm btn-primary" href="/feeding-frenzy-as-counties-spend-millions-on-hospitality">READ MORE</a></p>
       </div>
+      <div class="col-sm-12 visible-xs" style="height:20px;"></div>
       <div class="col-sm-3">
         <h4>
           <a href="/mcas-spend-billions-on-foreign-trips">MCAs spend billions on foreign trips</a>
@@ -77,6 +162,30 @@
       </div>
     </div>
   </div>
-</section>
+</section> <!-- /.stories -->
 
+{% endblock %}
+
+{% block javascript %}
+<script type="text/javascript">
+    var comparatives = "{{ comparatives|safe }}";
+</script> 
+<script src="/assets/js/main.js"></script>
+<script type="text/javascript">
+  // extract county hospitality budget from JSON 
+  // and assign it here. The rest is magic.
+  var countyBudgetInteger = '{{ biscuit_budget }}',
+  countyBudgetString  = '{{ biscuit_budget_str }}';
+</script>
+
+<script type="text/javascript">
+  $('#sideAffix').affix({
+    offset: {
+      top: 100,
+      bottom: function () {
+        return (this.bottom = $('footer').outerHeight(true))
+      }
+    }
+  })
+</script>
 {% endblock %}
