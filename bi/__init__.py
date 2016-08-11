@@ -95,7 +95,7 @@ def data():
 def story():
     return render_template('story.html')\
 
-@app.route('/from-loan-to-mouth')
+@app.route('/mcas-malaria-budget')
 def story2():
     return render_template('story2.html')
 
