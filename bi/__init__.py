@@ -103,7 +103,7 @@ def story2():
 def story3():
     return render_template('story3.html')\
 
-@app.route('/mcas-spend-billions-on-foreign-trips')
+@app.route('/county-spending-arv')
 def story4():
     return render_template('story4.html')
 
