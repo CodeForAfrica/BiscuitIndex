@@ -107,6 +107,10 @@ def story3():
 def story4():
     return render_template('story4.html')
 
+@app.route('/tea-or-tb')
+def story5():
+    return render_template('story5.html')
+
 manager = Manager(app)
 
 if __name__ == "__main__":
