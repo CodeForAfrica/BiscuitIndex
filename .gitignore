@@ -84,3 +84,5 @@ _static/assets/sublime
 
 # other stuff
 _static/.sass-cache/
+
+_static/base.html
