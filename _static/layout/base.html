@@ -105,9 +105,6 @@
 
         <script src="/assets/js/bootstrap.min.js"></script>
 
-        {% block javascript %}
-        {% endblock %}
-
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -117,5 +114,9 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-33350783-7','auto');ga('send','pageview');
         </script>
+
+        {% block javascript %}
+        {% endblock %}
+        
     </body>
 </html>

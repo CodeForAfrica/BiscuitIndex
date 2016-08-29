@@ -44,15 +44,20 @@ jQuery(function($) {
 					expenditure = $('#expenditure').val(),
 					county 		= $('#county').val();
 
-					// someone tried to submit without input
-					if ( expenditure == '' || expenditure == 0) {
-						$('#expenditure').addClass('highlight').focus();
-					} else {
-						// simulate reload with set parameters
-						location.href = '?cat=' + category 
-										+ '&exp=' + expenditure 
-										+ '&county=' + county;
-					}
+				// send to analytics
+				ga('send', 'event', 'biscuitindex', 'category', category);
+				ga('send', 'event', 'biscuitindex', 'expenditure', expenditure);
+				ga('send', 'event', 'biscuitindex', 'county', county);
+				
+				// someone tried to submit without input
+				if ( expenditure == '' || expenditure == 0) {
+					$('#expenditure').addClass('highlight').focus();
+				} else {
+					// simulate reload with set parameters
+					location.href = '?cat=' + category 
+									+ '&exp=' + expenditure 
+									+ '&county=' + county;
+				}
 			});
 
 
