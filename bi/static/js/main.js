@@ -317,23 +317,23 @@ jQuery(function($) {
 			}); // load
 
 			// sticky sidebar
-			var $sideBar = $body.find('.side-col'),
-				sideBarPos = $sideBar.offset().top,
-				scrollPos, diff;
+			// var $sideBar = $body.find('.side-col'),
+			// 	sideBarPos = $sideBar.offset().top,
+			// 	scrollPos, diff;
 
 
-			$(window).scroll(function() {
-				scrollPos = $body.scrollTop();
+			// $(window).scroll(function() {
+			// 	scrollPos = $body.scrollTop();
 
-				diff = (scrollPos - (sideBarPos - 88))
+			// 	diff = (scrollPos - (sideBarPos - 88))
 
-				if ((diff > 0) && (wWidth > 800) && (diff < bHeight / 2)) {
-					$sideBar.css({'margin-top':diff});
-				} else if (diff < 0) {
-					$sideBar.removeAttr('style');
-				}
+			// 	if ((diff > 0) && (wWidth > 800) && (diff < bHeight / 2)) {
+			// 		$sideBar.css({'margin-top':diff});
+			// 	} else if (diff < 0) {
+			// 		$sideBar.removeAttr('style');
+			// 	}
 
-			});
+			// });
 
 		}
 
