@@ -2,13 +2,11 @@ from flask import (Flask, g, request, session, redirect,
                    url_for, render_template, jsonify)
 from flask_script import Manager
 import redis, os, dataset, uuid
-from biscuit_index.bi import config as config_file
+from bi import config as config_file
 from normality import slugify
 from datetime import datetime
 
-app = Flask(__name__,
-            template_folder=os.getenv('BISCUIT_INDEX_TEMPLATES'),
-            static_folder=os.getenv('BISCUIT_INDEX_STATIC'))
+app = Flask(__name__)
 app.config.from_object(config_file)
 
 
