@@ -2,12 +2,54 @@
 layout: embed
 
 stylesheets:
-  - https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.6/select2-bootstrap.min.css
+  - /css/embed/basic.css
+
 javascripts:
-  - https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js
-  - /js/biscuitindex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js
 ---
 
 <div class="container text-center">
-  <select class="bi-county"></select>
+  <br/>
+  
+  <div class="form-inline">
+    <select class="bi-compare-items"></select>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon">Ksh.</span>
+        <input type="text" class="form-control bi-compare-amt" aria-label="Amount (to the nearest Kenya Shillings)">
+        <span class="input-group-addon">.00</span>
+      </div>
+
+    </div>
+  </div>
+  <br/>
+  <p>compared to</p>
+  <div class="form-inline">
+    <select class="bi-county"></select>
+  </div>
+  
+  <hr/>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <p><span class="bi-county-name"></span> county's budget allocation on hospitality</p>
+      <h3 class="bi-hospitality-budget-amt-text">100 m</h3>
+      <p>is enough to <span class="bi-comparison-transaction">pay for</span></p>
+      <h3 class="bi-comparison-count" style="margin-bottom: 0px;">3000</h3>
+      <hr style="margin-top: 5px; margin-bottom: 5px;" />
+      <p class="bi-comparison-unit">terms of school fees</p>
+    </div>
+
+    <div class="col-sm-9">
+      <div class="bi-comparison-icons"><i class="fa fa-graduation-cap"></i></div>
+      <hr/>
+      <p class="bi-comparison-icons-unit"><i class="fa fa-graduation-cap"></i> = 1 term of school fees</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <p><a href="https://biscuitindex.codeforkenya.org/" target="_blank" rel="noopener noreference">Biscuit Index</a> built by Code for Kenya</p>
+  
 </div>
