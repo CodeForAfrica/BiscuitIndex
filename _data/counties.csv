@@ -1,0 +1,48 @@
+code,name,governor,governor_deputy,party,area_km2,population,city,hospitality_budget,total_budget
+1,Mombasa,Hassan Joho,Hazel Ezabel Nyamoki Ogunde,ODM,212.5,939370,Mombasa,55100000,9900000000
+2,Kwale,Salim Mvurya,Fatuma Mohamed Achani,JP[18],8270.3,649931,Kwale,82100000,6500000000
+3,Kilifi,Amason Kingi,Kenneth Mwakombo Kamto,ODM,12245.9,1109735,Kilifi,89900000,9900000000
+4,Tana River,Dhadho Gadae Godhana,Jire Siyat Mohamed,ODM,35375.8,240075,Hola,17900000,4600000000
+5,Lamu,Fahim Yassin Twaha,,JP,6497.7,101539,Lamu,0,2500000000
+6,Taita-Taveta,Granton Graham Samboja,,WDM-K,17083.9,284657,Mwatate,25100000,4200000000
+7,Garissa,Bunow Ali Korane,Dagame Abdi,JP,45720.2,623060,Garissa,108000000,7900000000
+8,Wajir,Mohamed Abdi Mahamud,,JP,55840.6,661941,Wajir,40000000,7300000000
+9,Mandera,Ali Ibrahim Roba,Omar Mohamed Maalim,JP,25797.7,1025756,Mandera,183000000,11300000000
+10,Marsabit,Mohamud Mohamed Ali,,JP,66923.1,291166,Marsabit,51800000,5800000000
+11,Isiolo,Mohammed Abdi Kuti,,IND,25336.1,143294,Isiolo,55000000,3300000000
+12,Meru,Kiraitu Murungi,,JP,6930.1,1356301,Meru,108700000,7700000000
+13,Tharaka,Onesmus Muthomi Njuki,,JP,2409.5,365330,Kathwana,37900000,4000000000
+14,Embu,Martin Wambora,Dorothy Nditi Muchungu[19],JP[20],2555.9,516212,Embu,47600000,5000000000
+15,Kitui,Charity Ngilu,,NARC,24385.1,1012709,Kitui,98800000,9600000000
+16,Machakos,Alfred Mutua,Benard Muia Tom Kiala,JP,5952.9,1098584,Machakos,41400000,9300000000
+17,Makueni,Kivutha Kibwana,Adelina Ndeto Mwau,WDM-K,8008.9,884527,Wote,64400000,7000000000
+18,Nyandarua,Francis Kimemia,,JP,3107.7,596268,Ol Kalou,78300000,4500000000
+19,Nyeri,Patrick Wahome Gakuru,,JP,2361,693558,Nyeri,77800000,5400000000
+20,Kirinyaga,Anne Waiguru,,JP,1205.4,528054,Kerugoya / Kutus,0,4100000000
+21,Murang'a,Mwangi wa Iria,Augustine J Gakure Monyo,JP,2325.8,942581,Murang'a,62000000,5900000000
+22,Kiambu,Ferdinand Waititu,,JP,2449.2,1623282,Kiambu,53000000,10400000000
+23,Turkana,Josphat Nanok,Peter Ekai Lokoel,ODM,71597.8,855399,Lodwar,24500000,13100000000
+24,West Pokot,John Krop Lonyangapuo[21],,KANU,8418.2,512690,Kapenguria,66000000,4300000000
+25,Samburu,Moses Kasaine,Joseph Lemarkat,JP,20182.5,223947,Maralal,16100000,4100000000
+26,Trans-Nzoia,Patrick Khaemba,Stanley Kiptoo Kenei Tarus,FORD-KENYA,2469.9,818757,Kitale,103700000,5300000000
+27,Uasin Gishu,Jackson Mandago,Daniel Kiplagat Kiprotich,JP,2955.3,894179,Eldoret,0,6900000000
+28,Elgeyo-Marakwet,Alex Tolgos,Gabriel Lagat Kosgey,JP,3049.7,369998,Iten,11500000,3800000000
+29,Nandi,Stephen Kipyego Sang,,JP,2884.5,752965,Kapsabet,7300000,5200000000
+30,Baringo,Stanley Kiptis,,JP,11075.3,555561,Kabarnet,0,0
+31,Laikipia,Ndiritu Muriithi,,IND,8696.1,399227,Rumuruti,59400000,4300000000
+32,Nakuru,Lee Kinyanjui,,JP,7509.5,1603325,Nakuru,31500000,11000000000
+33,Narok,Samuel ole Tunai,Aruasa Evalyn Chepkirui,JP,17921.2,850920,Narok,90300000,8000000000
+34,Kajiado,Joseph Ole Lenku,,JP,21292.7,687312,Kajiado,60000000,5700000000
+35,Kericho,Paul Kiprono,Susan Chepkoech Kikwai,JP,2454.5,752396,Kericho,68000000,4800000000
+36,Bomet,Joyce Laboso,,JP,1997.9,730129,Bomet,0,4500000000
+37,Kakamega,Wycliffe Oparanya,Philip Museve Kutima,ODM,3033.8,1660651,Kakamega,71000000,10600000000
+38,Vihiga,Wilber Otichilo,,ODM,531.3,554622,Vihiga,24800000,4800000000
+39,Bungoma,Wycliffe Wafula Wangamati,,FORD-KENYA,2206.9,1375063,Bungoma,332700000,10300000000
+40,Busia,Sospeter Ojaamong,Kizito Osore Wangalwa,ODM,1628.4,743946,Busia,22400000,6300000000
+41,Siaya,Cornel Rasanga,Wilson Ouma Onyango,ODM,2496.1,842304,Siaya,32100000,5900000000
+42,Kisumu,Peter Anyang' Nyong'o,,ODM,2009.5,968909,Kisumu(City),46500000,7900000000
+43,Homa Bay,Cyprian Awiti,Hamiliton Onyango Orata,ODM,3154.7,963794,Homa Bay,19800000,5000000000
+44,Migori,Zacharia Obado,Nelson Mahanga Mwita,ODM,2586.4,917170,Migori,66800000,5800000000
+45,Kisii,James Ongwae,Arthur Maangi Gongera,ODM,1317.9,1152282,Kisii,50400000,7500000000
+46,Nyamira,John Obiero,Amos Kimwomi Nyaribo,ODM,912.5,598252,Nyamira,12000000,4700000000
+47,Nairobi (County),Mike Sonko,Polycarp Igathe,JP,694.9,3138369,Nairobi (City),98000000,25600000000
