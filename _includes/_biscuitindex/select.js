@@ -1,38 +1,36 @@
 
 $(document).ready(function() {
 
-  $('.bi-compare-items').select2({
-    data: BiscuitIndex.data.comparisons,
-    minimumResultsForSearch: Infinity
-  });
+  $('select.bi-comparatives').select2();
 
-  $('.bi-compare-amt').val(BiscuitIndex.data.comparisons[BiscuitIndex.selected.comparison].amount);
+  $('input#bi-compare-amt').val(BiscuitIndex.data.comparatives[BiscuitIndex.selected.comparative].amount);
 
-  $('.bi-county').select2({
-    data: BiscuitIndex.data.budgets
+  $('select#bi-county').select2({
+    data: BiscuitIndex.data.counties
   });
   
 
-
-  $('.bi-compare-items').on('change', function() {
-    BiscuitIndex.selected.comparison = $( this ).val();
-    $('.bi-compare-amt').val(BiscuitIndex.data.comparisons[BiscuitIndex.selected.comparison].amount);
-    BiscuitIndex.fn.compare();
+  $('select#bi-comparatives').on('change', function() {
+    BiscuitIndex.selected.comparative = $( this ).val();
+    $('input#bi-compare-amt').val(BiscuitIndex.data.comparatives[BiscuitIndex.selected.comparative].amount);
   });
 
-  $('.bi-compare-amt').on('change', function() {
-    BiscuitIndex.data.comparisons[BiscuitIndex.selected.comparison].amount = $( this ).val();
-    BiscuitIndex.fn.compare();
+  $('input#bi-compare-amt').on('change', function() {
+    BiscuitIndex.data.comparatives[BiscuitIndex.selected.comparative].amount = $( this ).val();
   });
 
-  $('.bi-county').on('change', function() {
-    BiscuitIndex.selected.budget = $( this ).val();
-    BiscuitIndex.fn.compare();
+  $('select#bi-county').on('change', function() {
+    BiscuitIndex.selected.county = $( this ).val();
   });
 
 
-  $('.bi-county').val(28);
-  $('.bi-county').trigger('change');
+  $('select#bi-county').val(28);
+  $('select#bi-county').trigger('change');
 
+
+  $('button#bi-compare').on('click', function () {
+    BiscuitIndex.fn.compare();
+  });
+  $('button#bi-compare').trigger('click');
 
 });

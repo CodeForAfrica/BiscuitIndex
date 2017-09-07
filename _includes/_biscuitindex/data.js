@@ -1,41 +1,48 @@
 
-BiscuitIndex.data.comparisons = [
+BiscuitIndex.data.comparatives = [
+  {% for comparative in site.data.comparatives %}
+    {
+      'text': toTitleCase("{{ comparative.name }}"),
+      'amount': {{ comparative.amount }},
+      'icon': '{{ comparative.icon }}',
+      'unit': '{{ comparative.unit }}',
+      'transaction': '{{ comparative.transaction }}'
+    },
+  {% endfor %}
+
   {
-    id: 0,
-    text: 'Rent',
-    amount: 35000,
-    icon: '<i class="fa fa-home"></i>',
-    unit: 'Month',
-    transaction: 'pay for'
+    'text': 'MRI MACHINES',
+    'amount': 150000000,
+    'icon': '<i class="mri"></i>'
   },
   {
-    id: 1,
-    text: 'School Fees',
-    amount: 10000,
-    icon: '<i class="fa fa-graduation-cap"></i>',
-    unit: 'Term',
-    transaction: 'pay for'
+    'text': 'DIALYSIS MACHINES',
+    'amount': 3000000,
+    'icon': '<i class="dialysis"></i>'
   },
   {
-    id: 2,
-    text: 'Maize Flour',
-    amount: 124,
-    icon: '<i class="fa fa-cutlery"></i>',
-    unit: 'Packet',
-    transaction: 'buy'
+    'text': 'MALARIA DRUGS',
+    'amount': 15,
+    'icon': '<i class="malarial"></i>'
   }
+
 ];
 
-
-BiscuitIndex.data.budgets = [
-  {% for county in site.data.county_hospitality_data %}
+BiscuitIndex.data.counties = [
+  {% for county in site.data.counties %}
     {
-      id: {{ forloop.index0 }},
-      text: toTitleCase("{{ county.name }}"),
-      hospitality: {{ county.hospitality_budget }},
-      hospitality_text: numeral({{ county.hospitality_budget }}).format('0.0 a'),
-      total: {{ county.total_budget }},
-      total_text: numeral({{ county.total_budget }}).format('0.0 a')
+      code: {{ county.code }},
+      name: toTitleCase("{{ county.name }}"),
+      governor: "{{ county.governor }}",
+      governor_deputy: "{{ county.governor_deputy }}",
+      party: "{{ county.party }}",
+      area_km2: {{ county.area_km2 }},
+      population: {{ county.population }},
+      city: "{{ county.city }}",
+      hospitality_budget: {{ county.hospitality_budget }},
+      hospitality_budget_text: numeral({{ county.hospitality_budget }}).format('0.0 a'),
+      total_budget: {{ county.total_budget }},
+      total_budget_text: numeral({{ county.total_budget }}).format('0.0 a')
     },
   {% endfor %}
 ];

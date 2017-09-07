@@ -3,35 +3,60 @@
  * -------
  */
 
-BiscuitIndex.fn.displayComparison = function (data) {
+BiscuitIndex.fn.displayComparison = function (comparison) {
 
-  data.icons_html = '';
-  $('.bi-comparison-icons').html(data.icons_html);
-
-  for (var i = 0; i < data.count_icons ; i++) {
-    data.icons_html += data.comparison.icon + ' ';
+  // Set the descriptions
+  if (parseInt(comparison.county.hospitality_budget) == 0) {
+    $('.bi-output #bi-hospitality-budget-amt-text').html('N/A');
+    $('.bi-output #bi-comparative-count').html('N/A');
+    $('.bi-output #bi-comparative-icons').html('No data available');
   };
 
-  $('.bi-county-name').html(data.budget.text);
 
-  $('.bi-hospitality-budget-amt-text').html(data.budget.hospitality_text);
+  // Display comparative
 
-  $('.bi-comparison-transaction').html(data.comparison.transaction);
-  $('.bi-comparison-count').html(data.count);
-  $('.bi-comparison-unit').html(data.comparison.unit + 's of ' + data.comparison.text)
+  comparison.icons_html = '';
+  $('.bi-comparative-icons').html(comparison.icons_html);
 
-
-  $('.bi-comparison-icons').html(data.icons_html);
-
-  $('.bi-comparison-icons-unit').html(
-    data.comparison.icon + ' = ' + data.multiple + ' ' + data.comparison.unit + 's of ' + data.comparison.text
-  );
-
-  if (parseInt(data.budget.hospitality) == 0) {
-    $('.bi-hospitality-budget-amt-text').html('N/A');
-    $('.bi-comparison-count').html('N/A');
-    $('.bi-comparison-icons').html('No data available');
+  for (var i = 0; i < comparison.icons_no ; i++) {
+    comparison.icons_html += comparison.comparative.icon + ' ';
   };
 
-  return data.html;
+  $('.bi-output #bi-county-name').html(comparison.county.name + " County's budget allocation on hospitality");
+
+  $('.bi-output #bi-hospitality-budget-amt-text').html(comparison.county.hospitality_budget_text);
+
+  $('.bi-output #bi-comparative-transaction').html(comparison.comparative.transaction);
+  $('.bi-output #bi-comparative-count').html(numeral(comparison.icons_count).format('0,0'));
+  $('.bi-output #bi-comparative-unit').html(comparison.comparative.unit + 's of ' + comparison.comparative.text)
+
+  $('.bi-output .static-chart #bi-icons').html(comparison.icons_html);
+
+  $('.bi-output .static-chart .icon-legend #bi-icon').html(comparison.comparative.icon);
+  $('.bi-output .static-chart .icon-legend #bi-icons-multiple').html(comparison.icons_multiple);
+  $('.bi-output .static-chart .icon-legend #bi-comparative-name').html(comparison.comparative.text);
+
+
+  // Display default comparatives
+  // TODO: Smarter selection incase defaults are less
+  $('.bi-comparatives-defaults .icon-row').each(function(index, element){
+    var comparison_default = comparison.comparatives_defaults[index];
+
+    $(this).find('.bi-icon-count').html(numeral(comparison_default.icons_count).format('0,0'));
+    $(this).find('.bi-comparative-name').html(comparison_default.comparative.text);
+
+    comparison_default.icons_html = '';
+    for (var i = 0; i < comparison_default.icons_no ; i++) {
+      comparison_default.icons_html += comparison_default.comparative.icon + ' ';
+    };
+    $(this).find('.bi-icons').html(comparison_default.icons_html);
+
+    $(this).find('.icon-legend #bi-icon').html(comparison_default.comparative.icon);
+    $(this).find('.icon-legend #bi-icons-multiple').html(
+      numeral(comparison_default.icons_multiple).format('0,0')
+    );
+
+  });
+
+  return comparison.html;
 };

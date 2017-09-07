@@ -1,21 +1,36 @@
 
 var BiscuitIndex = {
 
+  MAX_ICONS: 100,
+
   data: {
-    comparisons: [],
-    budgets: []
+    comparatives: [],
+    counties: []
   },
 
   selected: {
-    comparison: 0,
-    budget: 0
+    comparative: 0,
+    county: 0
+  },
+
+  comparison: {
+    'county': {},
+    'comparative': {},
+
+    'icons_count': 0,
+    'icons_no': 0,
+    'icons_multiple': 1,
+
+    'comparatives_defaults': []
   },
 
   fn: {
     compare: function () {},
+    compareDefault: function () {},
+
+    iconCount: function () {},
+    
     displayComparison: function () {},
   },
 
 }
-
-$.fn.select2.defaults.set( "theme", "bootstrap" );

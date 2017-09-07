@@ -3,11 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    David Lemayian -- Lead Technologist -- @DavidLemayian
 
 # THANKS
 
-    <name>
+    Andrew Kamau
+    Evelyn Muthoni
+    David Kuria
+    Huston Malande
 
 # TECHNOLOGY COLOPHON
 

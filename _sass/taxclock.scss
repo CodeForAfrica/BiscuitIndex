@@ -1,0 +1,86 @@
+.tc-box {
+  padding: 10px 15px 10px;
+  .h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.tc-box-clear {
+  border: 1px solid #fff;
+  padding: 10px 15px 0px;
+}
+
+.tc-box-red {
+  background-color: $red;
+}
+
+.tc-box-blue {
+  background-color: $blue;
+  color: #fff;
+
+  .tc-box-arrow-right {
+    height: 46px;
+    width: 51px;
+    background-image: url('/img/tc_box_arrow_right_blue.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
+  }
+  .tc-box-arrow-bottom {
+    height: 51px;
+    width: 46px;
+    background-image: url('/img/tc_box_arrow_bottom_blue.png');
+    background-size: cover;
+    position: absolute;
+    bottom: -50px;
+    left: 47%;
+  }
+
+  .input-group {
+    max-width: 330px;
+    margin: 10px auto;
+    .input-group-addon, .form-control {
+      border-radius: 0;
+      border: 0;
+    }
+    .input-group-addon {
+      background-color: $lightblue;
+      color: #fff;
+    }
+  }
+}
+
+.tc-box-white {
+  border: 5px solid $blue;
+  background-color: #fff;
+  color: $blue;
+  padding-top: 20px; padding-bottom: 20px;
+}
+
+.tc-box-black {
+  background-color: #000;
+  color: #fff;
+}
+
+.tc-bg-blue {
+  background-color: $blue;
+  color: #fff;
+}
+.tc-bg-lightblue {
+  background-color: $lightblue;
+  color: #fff;
+}
+
+.tc-text-blue {
+  color: $blue;
+}
+.tc-text-lightblue {
+  color: $lightblue;
+}
+
+.tc-text-time {
+  padding: 0 15px;
+  margin-bottom: 20px;
+}

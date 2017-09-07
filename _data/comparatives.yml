@@ -1,0 +1,15 @@
+- name: 'Rent'
+  amount: 35000
+  icon: '<i class="house"></i>'
+  unit: 'Month'
+  transaction: 'pay for'
+- name: 'School Fees'
+  amount: 10000
+  icon: '<i class="fee"></i>'
+  unit: 'Term'
+  transaction: 'pay for'
+- name: 'Maize Flour'
+  amount: 124
+  icon: '<i class="maize"></i>'
+  unit: 'Packet'
+  transaction: 'buy'
